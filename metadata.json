@@ -1,0 +1,6 @@
+{
+  "name": "Rasoi & World Kitchen",
+  "description": "Learn to cook authentic Indian and international dishes based on the ingredients you have at home, featuring culinary technique masterclasses, sensory cues, and step-by-step kitchen walkthroughs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
