@@ -49,6 +49,15 @@ export interface RecipeIngredient {
   isPantryMatch?: boolean;
 }
 
+export interface VideoTutorialSuggestion {
+  title: string;
+  channelName: string;
+  youtubeQuery: string;
+  videoId?: string;
+  durationHint?: string;
+  tip?: string;
+}
+
 export interface RecipeStep {
   stepNumber: number;
   title: string;
@@ -56,6 +65,7 @@ export interface RecipeStep {
   chefTip?: string;
   sensoryCue?: string; // e.g. "Oil begins to separate from the masala paste"
   timerMinutes?: number;
+  stepVideoQuery?: string;
 }
 
 export interface FlavorProfile {
@@ -115,6 +125,8 @@ export interface Recipe {
   }[];
   wineOrBeveragePairing?: string;
   isAiGenerated?: boolean;
+  videoTutorial?: VideoTutorialSuggestion;
+  youtubeVideoQuery?: string;
 }
 
 export interface TechniqueMasterclass {

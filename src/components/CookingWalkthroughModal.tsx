@@ -25,7 +25,9 @@ import {
   Dumbbell,
   Wheat,
   RotateCw,
+  Film,
 } from 'lucide-react';
+import { YouTubeVideoModal } from './YouTubeVideoModal';
 import {
   playKitchenChime,
   speakInstruction,
@@ -45,6 +47,7 @@ export const CookingWalkthroughModal: React.FC<CookingWalkthroughModalProps> = (
   const [currentStepIdx, setCurrentStepIdx] = useState(0);
   const [servings, setServings] = useState(recipe.defaultServings);
   const [isSpeaking, setIsSpeaking] = useState(false);
+  const [showVideoModal, setShowVideoModal] = useState(false);
 
   // Nutritional information state via AI generation endpoint
   const [nutrition, setNutrition] = useState<NutritionalInfo | null>(
@@ -338,22 +341,47 @@ export const CookingWalkthroughModal: React.FC<CookingWalkthroughModalProps> = (
                 <span>{isSpeaking ? 'Stop Voice' : 'Read Aloud (Clean Hands)'}</span>
               </button>
 
+              {/* YouTube Video Walkthrough Guide for visual learners */}
+              <button
+                onClick={() => setShowVideoModal(true)}
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-red-50 hover:bg-red-100 text-red-700 border border-red-200 shadow-xs transition-colors"
+                title="Can't understand textually? Watch visual video tutorial with real chef techniques"
+              >
+                <Film className="w-4 h-4 text-red-600" />
+                <span>Watch Video Guide</span>
+              </button>
+
               {/* Ask the Chef Toggle */}
               <button
                 onClick={() => setIsChefDrawerOpen(!isChefDrawerOpen)}
                 className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-stone-100 hover:bg-stone-200 text-stone-800 border border-stone-200 shadow-xs transition-colors"
               >
-                <ChefHat className="w-4 h-4 text-orange-600" />
+                <ChefHat className="w-4 h-4 text-emerald-800" />
                 <span>Ask Chef</span>
               </button>
             </div>
           </div>
 
           {/* Main Step Instruction - Big, High Contrast text for easy reading from stove */}
-          <div className="p-6 rounded-3xl bg-amber-50/40 border border-amber-200/80 shadow-xs">
+          <div className="p-6 rounded-3xl bg-emerald-50/30 border border-emerald-900/10 shadow-xs">
             <p className="text-lg sm:text-xl md:text-2xl text-stone-800 font-medium leading-relaxed tracking-normal">
               {currentStep.instruction}
             </p>
+          </div>
+
+          {/* Visual Learner Assistance Prompt */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3.5 rounded-2xl bg-stone-50 border border-stone-200/90 text-xs">
+            <div className="flex items-center gap-2 text-stone-600">
+              <Play className="w-4 h-4 text-red-600 fill-current shrink-0" />
+              <span>Can't understand this step textually? Watch chef demonstrations &amp; visual cues.</span>
+            </div>
+            <button
+              onClick={() => setShowVideoModal(true)}
+              className="font-bold text-red-700 hover:text-red-800 hover:underline inline-flex items-center gap-1 self-start sm:self-auto shrink-0"
+            >
+              <span>Watch Video For This Step</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
           </div>
 
           {/* Sensory Cues & Science Callouts */}
@@ -664,6 +692,15 @@ export const CookingWalkthroughModal: React.FC<CookingWalkthroughModalProps> = (
           )}
         </div>
       </div>
+
+      {/* Visual YouTube Video Guide Modal */}
+      {showVideoModal && (
+        <YouTubeVideoModal
+          recipe={recipe}
+          activeStep={currentStep}
+          onClose={() => setShowVideoModal(false)}
+        />
+      )}
     </div>
   );
 };

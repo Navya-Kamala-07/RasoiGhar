@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { CURATED_RECIPES } from './data/curatedRecipes';
 import { PANTRY_PRESETS, PantryPreset } from './data/ingredients';
 import { Recipe, CuisineCategory, DietaryPreference } from './types/recipe';
-import { Header } from './components/Header';
+import { Header, NavTab } from './components/Header';
 import { PantrySelector } from './components/PantrySelector';
 import { RecipeCard } from './components/RecipeCard';
 import { CookingWalkthroughModal } from './components/CookingWalkthroughModal';
@@ -19,11 +19,17 @@ import {
   AlertCircle,
   Lightbulb,
   UtensilsCrossed,
+  Search,
+  X,
+  SlidersHorizontal,
 } from 'lucide-react';
 
 export default function App() {
   // Navigation
-  const [activeTab, setActiveTab] = useState<'pantry' | 'desserts' | 'masterclass' | 'spices' | 'saved'>('pantry');
+  const [activeTab, setActiveTab] = useState<NavTab>('explore');
+
+  // Dish Search State
+  const [dishSearchQuery, setDishSearchQuery] = useState('');
 
   // Pantry State (seeded with appetizing defaults)
   const [selectedIngredients, setSelectedIngredients] = useState<string[]>([
@@ -296,6 +302,21 @@ export default function App() {
           return false;
         }
 
+        // Dish Search Filter (matches dish title, regional name, cuisine, ingredients, tags)
+        if (dishSearchQuery.trim()) {
+          const q = dishSearchQuery.trim().toLowerCase();
+          const matchesTitle = recipe.title.toLowerCase().includes(q);
+          const matchesOriginal = recipe.originalName?.toLowerCase().includes(q);
+          const matchesDesc = recipe.description.toLowerCase().includes(q);
+          const matchesCuisine = recipe.cuisine.toLowerCase().includes(q);
+          const matchesTag = recipe.tags.some((t) => t.toLowerCase().includes(q));
+          const matchesIng = recipe.ingredientsList.some((i) => i.name.toLowerCase().includes(q));
+
+          if (!matchesTitle && !matchesOriginal && !matchesDesc && !matchesCuisine && !matchesTag && !matchesIng) {
+            return false;
+          }
+        }
+
         return true;
       })
       .sort((a, b) => {
@@ -305,7 +326,7 @@ export default function App() {
         return b.score - a.score;
       })
       .map(({ recipe }) => recipe);
-  }, [allRecipes, selectedIngredients, selectedCuisine, dietaryFilter, pantryStrictness]);
+  }, [allRecipes, selectedIngredients, selectedCuisine, dietaryFilter, pantryStrictness, dishSearchQuery]);
 
   return (
     <div className="min-h-screen flex flex-col bg-stone-50/60 text-stone-900 selection:bg-amber-200 selection:text-amber-900">
@@ -345,8 +366,8 @@ export default function App() {
           </div>
         )}
 
-        {/* Tab 1: Pantry Studio */}
-        {activeTab === 'pantry' && (
+        {/* Tab 1: Explore Dishes & Pantry Studio */}
+        {(activeTab === 'explore' || activeTab === 'pantry') && (
           <div className="space-y-8 animate-fadeIn">
             {/* Pantry Selector component */}
             <PantrySelector
@@ -365,17 +386,71 @@ export default function App() {
               onSelectCustomIngredient={handleSelectCustomIngredient}
             />
 
+            {/* Dedicated Dish Search & Cravings Bar */}
+            <div className="bg-white rounded-3xl border border-emerald-900/10 shadow-sm p-4 sm:p-5 space-y-3">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+                <div className="relative flex-1">
+                  <Search className="w-4 h-4 text-emerald-800 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                  <input
+                    type="text"
+                    value={dishSearchQuery}
+                    onChange={(e) => setDishSearchQuery(e.target.value)}
+                    placeholder="Search dishes you want to cook (e.g. Biryani, Dal Tadka, Paneer Makhani, Ramen, Gongura Pappu, Pasta)..."
+                    className="w-full pl-10 pr-10 py-2.5 rounded-xl border border-stone-300 bg-stone-50/50 text-sm text-stone-900 placeholder:text-stone-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:border-emerald-700 transition-all"
+                  />
+                  {dishSearchQuery && (
+                    <button
+                      onClick={() => setDishSearchQuery('')}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-600 p-1"
+                      title="Clear dish search"
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
+                  )}
+                </div>
+
+                {dishSearchQuery && (
+                  <button
+                    onClick={() => setDishSearchQuery('')}
+                    className="text-xs font-bold text-red-600 hover:text-red-700 px-3.5 py-2 rounded-xl bg-red-50 border border-red-200 shrink-0"
+                  >
+                    Clear Search ({matchedAndFilteredRecipes.length} dishes found)
+                  </button>
+                )}
+              </div>
+
+              {/* Quick Popular Dish Cravings Chips */}
+              <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none text-xs">
+                <span className="text-stone-400 font-semibold uppercase text-[10px] tracking-wider shrink-0 mr-1">
+                  Quick Cravings:
+                </span>
+                {['Biryani', 'Paneer', 'Dal Tadka', 'Dosa', 'Pasta', 'Ramen', 'Andhra Pappu', 'Gulab Jamun', 'Thai Curry'].map((dish) => (
+                  <button
+                    key={dish}
+                    onClick={() => setDishSearchQuery(dishSearchQuery.toLowerCase() === dish.toLowerCase() ? '' : dish)}
+                    className={`px-3 py-1 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border ${
+                      dishSearchQuery.toLowerCase() === dish.toLowerCase()
+                        ? 'bg-emerald-800 text-white border-emerald-800 shadow-2xs'
+                        : 'bg-stone-50 hover:bg-emerald-50 text-stone-700 border-stone-200/90'
+                    }`}
+                  >
+                    {dish}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             {/* Recipes Results Header */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-4 border-t border-stone-200">
               <div>
                 <h3 className="text-xl md:text-2xl font-display font-bold text-stone-900 flex items-center gap-2">
                   <span>Authentic Dishes You Can Cook</span>
-                  <span className="text-xs px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 font-sans font-bold border border-amber-300">
+                  <span className="text-xs px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-900 font-sans font-bold border border-emerald-200">
                     {matchedAndFilteredRecipes.length} Found
                   </span>
                 </h3>
                 <p className="text-xs sm:text-sm text-stone-500">
-                  Ranked by pantry compatibility &bull; Click "Start Kitchen Cooking Mode" for live timers and sensory cues
+                  Ranked by pantry compatibility &bull; Click "Video Guide" for YouTube chef tutorials or "Kitchen Mode" for step-by-step timers
                 </p>
               </div>
 
@@ -383,9 +458,9 @@ export default function App() {
               <button
                 onClick={() => handleGenerateAiRecipe()}
                 disabled={selectedIngredients.length === 0 || isAiGenerating}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 disabled:opacity-50 text-white text-xs font-bold shadow-xs transition-colors self-start sm:self-auto"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-800 hover:bg-emerald-700 disabled:opacity-50 text-white text-xs font-bold shadow-xs transition-colors self-start sm:self-auto"
               >
-                <Sparkles className="w-4 h-4 text-amber-200" />
+                <Sparkles className="w-4 h-4 text-amber-300" />
                 <span>{isAiGenerating ? 'Synthesizing with Gemini...' : 'Craft More Dishes with AI'}</span>
               </button>
             </div>
@@ -430,7 +505,20 @@ export default function App() {
           </div>
         )}
 
-        {/* Tab 2: Technique Masterclasses */}
+        {/* Tab 2: Desserts & Royal Sweets */}
+        {activeTab === 'desserts' && (
+          <DessertsAndSweetsView
+            allRecipes={allRecipes}
+            userIngredients={selectedIngredients}
+            savedRecipes={savedRecipes}
+            onToggleSave={handleToggleSave}
+            onOpenWalkthrough={(r) => setWalkthroughRecipe(r)}
+            onGenerateAiRecipe={handleGenerateAiRecipe}
+            isAiGenerating={isAiGenerating}
+          />
+        )}
+
+        {/* Tab 3: Technique Masterclasses */}
         {activeTab === 'masterclass' && <TechniqueMasterclassView />}
 
         {/* Tab 3: Spices & Substitutions */}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Recipe, NutritionalInfo } from '../types/recipe';
 import { fetchRecipeNutrition } from '../utils/nutritionApi';
+import { YouTubeVideoModal } from './YouTubeVideoModal';
 import {
   Clock,
   ChefHat,
@@ -18,6 +19,7 @@ import {
   Dumbbell,
   Wheat,
   RotateCw,
+  Play,
 } from 'lucide-react';
 
 interface RecipeCardProps {
@@ -36,6 +38,7 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
   onOpenWalkthrough,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [showVideoModal, setShowVideoModal] = useState(false);
   const [nutrition, setNutrition] = useState<NutritionalInfo | null>(
     recipe.nutritionalInfo || (recipe.proteinGrams !== undefined && recipe.fiberGrams !== undefined ? {
       calories: recipe.caloriesPerServing,
@@ -435,14 +438,32 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
 
       {/* Card Action Footer */}
       <div className="p-5 pt-3 border-t border-stone-100 bg-stone-50/50">
-        <button
-          onClick={() => onOpenWalkthrough(recipe)}
-          className="w-full py-3 px-4 rounded-2xl bg-emerald-800 hover:bg-emerald-700 text-white font-bold text-sm shadow-md shadow-emerald-900/15 hover:shadow-lg transition-all flex items-center justify-center gap-2 group/btn"
-        >
-          <Flame className="w-4 h-4 text-amber-300 group-hover/btn:scale-110 transition-transform" />
-          <span>Start Kitchen Cooking Mode</span>
-        </button>
+        <div className="flex gap-2">
+          <button
+            onClick={() => setShowVideoModal(true)}
+            className="py-3 px-3.5 rounded-2xl bg-red-50 hover:bg-red-100 text-red-700 font-bold text-xs border border-red-200 shadow-2xs hover:shadow-xs transition-all flex items-center justify-center gap-1.5 shrink-0"
+            title="Watch YouTube video tutorial if you prefer visual steps"
+          >
+            <Play className="w-3.5 h-3.5 fill-red-600 text-red-600" />
+            <span>Video Guide</span>
+          </button>
+          <button
+            onClick={() => onOpenWalkthrough(recipe)}
+            className="flex-1 py-3 px-4 rounded-2xl bg-emerald-800 hover:bg-emerald-700 text-white font-bold text-sm shadow-md shadow-emerald-900/15 hover:shadow-lg transition-all flex items-center justify-center gap-2 group/btn"
+          >
+            <Flame className="w-4 h-4 text-amber-300 group-hover/btn:scale-110 transition-transform" />
+            <span>Start Kitchen Mode</span>
+          </button>
+        </div>
       </div>
+
+      {/* Visual YouTube Video Guide Modal */}
+      {showVideoModal && (
+        <YouTubeVideoModal
+          recipe={recipe}
+          onClose={() => setShowVideoModal(false)}
+        />
+      )}
     </div>
   );
 };
