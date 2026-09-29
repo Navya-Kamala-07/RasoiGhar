@@ -654,6 +654,54 @@ Provide the nutritional estimate per serving:
   }
 });
 
+const N8N_CHAT_WEBHOOK_URL = 'https://navyakamala07.app.n8n.cloud/webhook/688efbf8-f1b4-4b45-94d2-941a39289456/chat';
+
+// N8N Webhook Chat Proxy Endpoint
+app.post('/api/n8n/chat', async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { message, chatInput, sessionId, context } = req.body;
+    const userMessage = chatInput || message || '';
+
+    if (!userMessage.trim()) {
+      res.status(400).json({ error: 'Message cannot be empty.' });
+      return;
+    }
+
+    const payload = {
+      chatInput: userMessage,
+      message: userMessage,
+      sessionId: sessionId || `rasoi-session-${Date.now()}`,
+      context: context || { app: 'Rasoi & World Kitchen' },
+      timestamp: new Date().toISOString(),
+    };
+
+    const response = await fetch(N8N_CHAT_WEBHOOK_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json, text/plain, */*',
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const contentType = response.headers.get('content-type') || '';
+    if (contentType.includes('application/json')) {
+      const data = await response.json();
+      const outputText = data.output || data.text || data.response || data.message || (Array.isArray(data) && (data[0]?.output || data[0]?.text)) || JSON.stringify(data);
+      res.json({ output: outputText, raw: data });
+    } else {
+      const text = await response.text();
+      res.json({ output: text });
+    }
+  } catch (error: any) {
+    console.error('Error forwarding to n8n chat webhook:', error);
+    res.status(502).json({
+      error: 'Failed to communicate with the n8n AI culinary assistant.',
+      details: error.message,
+    });
+  }
+});
+
 // Setup Vite or static serving
 async function startServer() {
   if (process.env.NODE_ENV === 'production') {

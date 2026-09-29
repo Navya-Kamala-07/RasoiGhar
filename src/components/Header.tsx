@@ -17,6 +17,7 @@ interface HeaderProps {
   setActiveTab: (tab: NavTab) => void;
   pantryCount: number;
   savedCount: number;
+  onOpenChat?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -24,6 +25,7 @@ export const Header: React.FC<HeaderProps> = ({
   setActiveTab,
   pantryCount,
   savedCount,
+  onOpenChat,
 }) => {
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-emerald-900/10 shadow-xs transition-all">
@@ -138,6 +140,19 @@ export const Header: React.FC<HeaderProps> = ({
               )}
             </button>
           </nav>
+
+          {/* Quick AI Chat Action Button */}
+          {onOpenChat && (
+            <button
+              onClick={onOpenChat}
+              className="hidden md:inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 transition-all shadow-2xs hover:scale-105"
+              title="Ask Rasoi AI Assistant powered by n8n"
+            >
+              <ChefHat className="w-4 h-4 text-emerald-700" />
+              <span>Ask Rasoi AI</span>
+              <span className="text-[9px] px-1.5 py-0.5 rounded bg-emerald-800 text-white font-mono">n8n</span>
+            </button>
+          )}
 
           {/* Quick Right Action / Mobile Nav Toggle */}
           <div className="flex items-center gap-1.5 lg:hidden overflow-x-auto">

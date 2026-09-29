@@ -10,6 +10,7 @@ import { TechniqueMasterclassView } from './components/TechniqueMasterclassView'
 import { SpiceAndSubstitutionsView } from './components/SpiceAndSubstitutionsView';
 import { SavedRecipesView } from './components/SavedRecipesView';
 import { DessertsAndSweetsView } from './components/DessertsAndSweetsView';
+import { N8nChatWidget } from './components/N8nChatWidget';
 import {
   Sparkles,
   Flame,
@@ -30,6 +31,9 @@ export default function App() {
 
   // Dish Search State
   const [dishSearchQuery, setDishSearchQuery] = useState('');
+
+  // n8n Live Culinary Chatbot State
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   // Pantry State (seeded with appetizing defaults)
   const [selectedIngredients, setSelectedIngredients] = useState<string[]>([
@@ -336,6 +340,7 @@ export default function App() {
         setActiveTab={setActiveTab}
         pantryCount={selectedIngredients.length}
         savedCount={savedRecipes.length}
+        onOpenChat={() => setIsChatOpen(true)}
       />
 
       {/* Main Content Area */}
@@ -544,6 +549,13 @@ export default function App() {
           onClose={() => setWalkthroughRecipe(null)}
         />
       )}
+
+      {/* n8n Live Culinary AI Assistant Chatbot */}
+      <N8nChatWidget
+        isOpen={isChatOpen}
+        onToggle={() => setIsChatOpen((prev) => !prev)}
+        selectedPantryItems={selectedIngredients}
+      />
 
       {/* Footer */}
       <footer className="border-t border-amber-200/80 bg-white/80 py-8 px-4 sm:px-6 lg:px-8 mt-12 text-center text-xs text-stone-500">
