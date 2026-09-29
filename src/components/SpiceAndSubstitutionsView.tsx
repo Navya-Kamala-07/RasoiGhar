@@ -54,6 +54,7 @@ export const SpiceAndSubstitutionsView: React.FC = () => {
     (s) =>
       s.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       (s.hindiName && s.hindiName.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      (s.teluguName && s.teluguName.toLowerCase().includes(searchQuery.toLowerCase())) ||
       s.flavorNotes.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
@@ -236,7 +237,7 @@ export const SpiceAndSubstitutionsView: React.FC = () => {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search spices by English or Hindi name..."
+              placeholder="Search spices by English, Hindi, or Telugu name (e.g. Jeelakarra, Avalu, Pasupu, Inguva, Shahi Jeera)..."
               className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-stone-300 text-xs text-stone-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
             />
           </div>
@@ -253,9 +254,9 @@ export const SpiceAndSubstitutionsView: React.FC = () => {
                     <h3 className="font-display font-bold text-lg text-stone-900">
                       {spice.name}
                     </h3>
-                    {spice.hindiName && (
+                    {(spice.hindiName || spice.teluguName) && (
                       <p className="text-xs font-serif text-amber-800 font-semibold">
-                        {spice.hindiName}
+                        {[spice.hindiName, spice.teluguName].filter(Boolean).join(' • ')}
                       </p>
                     )}
                   </div>

@@ -1,17 +1,23 @@
 export type CuisineCategory =
   | 'all'
+  | 'biryani'
+  | 'andhra-telugu'
+  | 'south-indian'
+  | 'desserts-sweets'
+  | 'asian'
+  | 'east-asian'
+  | 'thai'
+  | 'japanese'
+  | 'korean'
   | 'indian'
   | 'north-indian'
-  | 'south-indian'
   | 'indo-chinese'
   | 'coastal-indian'
   | 'bengali'
   | 'international'
   | 'italian'
-  | 'east-asian'
   | 'mexican'
   | 'mediterranean'
-  | 'thai'
   | 'french';
 
 export type DietaryPreference =
@@ -21,13 +27,15 @@ export type DietaryPreference =
   | 'non-veg'
   | 'gluten-free'
   | 'high-protein'
-  | 'quick-under-30';
+  | 'quick-under-30'
+  | 'dessert';
 
 export interface IngredientItem {
   id: string;
   name: string;
   category: 'produce' | 'proteins-dairy' | 'grains-staples' | 'indian-spices' | 'global-seasonings' | 'condiments-oils';
   indianName?: string;
+  teluguName?: string;
   commonUnits: string;
   substitutes?: string[];
   icon?: string;
@@ -58,6 +66,16 @@ export interface FlavorProfile {
   sweet: number;      // 1 - 5
 }
 
+export interface NutritionalInfo {
+  calories: number;
+  protein: number; // in grams
+  fiber: number;   // in grams
+  carbs?: number;  // in grams
+  fat?: number;    // in grams
+  summary?: string;
+  isAiGenerated?: boolean;
+}
+
 export interface Recipe {
   id: string;
   title: string;
@@ -70,6 +88,11 @@ export interface Recipe {
   difficulty: 'Easy' | 'Medium' | 'Advanced';
   defaultServings: number;
   caloriesPerServing: number;
+  proteinGrams?: number;
+  fiberGrams?: number;
+  carbsGrams?: number;
+  fatGrams?: number;
+  nutritionalInfo?: NutritionalInfo;
   tags: string[];
   matchingIngredients: string[];
   additionalIngredientsNeeded: {
@@ -110,6 +133,7 @@ export interface TechniqueMasterclass {
 export interface SpiceInfo {
   name: string;
   hindiName?: string;
+  teluguName?: string;
   flavorNotes: string;
   bestUsedFor: string;
   bloomingMethod: string;

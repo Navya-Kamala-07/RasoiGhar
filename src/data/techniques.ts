@@ -90,7 +90,55 @@ export const TECHNIQUES_MASTERCLASS: TechniqueMasterclass[] = [
       'Opening the pot mid-way: The steam pressure drops and the rice won’t cook evenly.',
       'Using completely raw rice: Rice must be parboiled until it has a slight bite before assembling the dum.'
     ],
-    bestForDishes: ['Hyderabadi Vegetable Dum Biryani', 'Awadhi Dum Aloo', 'Kashmiri Dum Pulao']
+    bestForDishes: ['Hyderabadi Vegetable Dum Biryani', 'Kolkata Shahi Biryani', 'Awadhi Dum Aloo', 'Kashmiri Dum Pulao']
+  },
+  {
+    id: 'andhra-popu-tempering',
+    name: 'Andhra Popu & Temple Lemon Rice Tempering (పోపు / తాళింపు)',
+    originalTerm: 'పోపు (Popu) / తాళింపు (Thalimpu)',
+    cuisine: 'Indian',
+    brief: 'Slow-crisping raw peanuts, chana dal, and urad dal in oil followed by crackling mustard seeds, curry leaves, ginger, and folding fresh lemon juice off-heat.',
+    whyItMatters: 'Temple-style Chitrannam gets its addictive texture from the multi-stage frying of lentils and groundnuts until golden-crunchy. Critically, fresh lemon juice must NEVER touch direct heat or boiling oil—thermal heating denatures citrus flavonoids into intensely bitter limonin. The seasoned warm oil is blended with turmeric and citrus off-heat before coating cooled separate rice grains.',
+    sensoryCheck: 'Listen for the change in sound: dull heavy thuds of raw peanuts shift to light crisp clicks as moisture evaporates, followed by the furious pop of mustard seeds and a wave of peppery citrus from curry leaves.',
+    stepByStep: [
+      'Spread freshly cooked rice (Sona Masoori or Basmati) onto a wide flat plate or tray. Drizzle 1 tsp neutral oil and cool completely to room temperature so grains stay separate.',
+      'Heat 2 tbsp oil or peanut oil in a kadai over medium flame. Add raw peanuts (pallilu) first, stirring continuously for 2 minutes until golden.',
+      'Add chana dal (senaga pappu) and urad dal (minapa pappu). Sauté until all dals turn uniform reddish-gold and nutty.',
+      'Add black mustard seeds; let them pop vigorously. Immediately lower the heat to low.',
+      'Drop in slit green chillies, dried red chillies, minced ginger, curry leaves, and a generous pinch of asafoetida (inguva). Turn off heat after 15 seconds.',
+      'Stir turmeric powder into the hot oil off-heat so it dissolves without burning.',
+      'Squeeze fresh lemon juice over the cooled rice along with salt, then pour the hot golden tempering over it. Gently fold with a flat silicone spatula until every grain is glistening sunny yellow.'
+    ],
+    commonMistakes: [
+      'Adding lemon juice to boiling oil: Boiling lemon juice turns it instantly bitter and astringent.',
+      'Mixing hot freshly steamed rice: Steaming hot rice breaks into gluey mush when tossed with oil and lemon.',
+      'Burning the lentils: Chana and urad dal burn easily; keep heat medium-low and stir constantly.'
+    ],
+    bestForDishes: ['Andhra Lemon Rice (Nimmakaya Pulihora)', 'Gongura Rice', 'Tomato Bath', 'Curd Rice Popu', 'Rava Upma']
+  },
+  {
+    id: 'biryani-rice-parboil',
+    name: 'The 70% Biryani Parboil & Layering Formula (Basmati & Seeraga Samba)',
+    originalTerm: 'तह लगाना (Teh Lagana / Layering)',
+    cuisine: 'Indian',
+    brief: 'Parboiling aged long-grain rice with whole spices, salt, and vinegar to precisely 70% doneness before assembling sealed steam layers with saffron, mint, and fried onions.',
+    whyItMatters: 'In a sealed Dum, parboiled rice absorbs the rising moisture and steam from the bottom meat or gravy layer. If the rice is fully cooked before layering, it becomes overcooked mush. If undercooked below 70%, it remains chalky. Parboiling with salt "as salty as soup" ensures seasoning penetrates into the starch matrix of each individual grain.',
+    sensoryCheck: 'Take a grain of boiling rice and pinch it between your thumb and forefinger: it should easily flatten on the outside, but you should feel a firm white grain core ("kanni") in the middle.',
+    stepByStep: [
+      'Soak aged basmati or seeraga samba rice in cold water for 30 minutes, then drain completely.',
+      'Bring a large pot of water (at least 5 times the volume of rice) to a rolling boil with whole green cardamom, cloves, cinnamon, shahi jeera, 2 bay leaves, and 2 tsp salt.',
+      'Add 1 tsp ghee and 1 tsp lemon juice or white vinegar (the acid keeps basmati grains snow-white and prevents starch clinging).',
+      'Drop soaked rice into the violently boiling water. Cook undisturbed for 5 to 6 minutes.',
+      'Test the grain: soft exterior with a firm inner dot (70% cooked). Immediately drain thoroughly in a colander.',
+      'Layer the hot rice over the base masala or vegetables. Drizzle saffron infused in warm milk, kewra water, birista fried onions, chopped mint, and desi ghee.',
+      'Seal tightly with double aluminum foil and heavy lid. Place over a hot cast-iron tawa on low heat for 18–20 minutes.'
+    ],
+    commonMistakes: [
+      'Not soaking basmati: Unsoaked rice cooks unevenly, breaking apart rather than expanding to its full 2-inch cooked length.',
+      'Not adding enough salt to the boiling water: Rice cannot absorb salt properly once drained and layered.',
+      'Skipping the resting time: Never open or stir the biryani right off the stove; 10 minutes of resting allows steam to settle and grains to firm up.'
+    ],
+    bestForDishes: ['Hyderabadi Dum Biryani', 'Kolkata Biryani', 'Awadhi Lucknowi Biryani', 'Sindhi Biryani', 'Malabar Thalassery Biryani']
   },
   {
     id: 'velveting-stirfry',

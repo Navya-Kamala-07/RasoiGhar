@@ -9,6 +9,7 @@ import { CookingWalkthroughModal } from './components/CookingWalkthroughModal';
 import { TechniqueMasterclassView } from './components/TechniqueMasterclassView';
 import { SpiceAndSubstitutionsView } from './components/SpiceAndSubstitutionsView';
 import { SavedRecipesView } from './components/SavedRecipesView';
+import { DessertsAndSweetsView } from './components/DessertsAndSweetsView';
 import {
   Sparkles,
   Flame,
@@ -22,7 +23,7 @@ import {
 
 export default function App() {
   // Navigation
-  const [activeTab, setActiveTab] = useState<'pantry' | 'masterclass' | 'spices' | 'saved'>('pantry');
+  const [activeTab, setActiveTab] = useState<'pantry' | 'desserts' | 'masterclass' | 'spices' | 'saved'>('pantry');
 
   // Pantry State (seeded with appetizing defaults)
   const [selectedIngredients, setSelectedIngredients] = useState<string[]>([
@@ -154,6 +155,7 @@ export default function App() {
   }, [aiGeneratedRecipes]);
 
   const matchedAndFilteredRecipes = useMemo(() => {
+    const userIngredientsSet = new Set(selectedIngredients);
     const userIngredientsLower = selectedIngredients.map((i) =>
       i.toLowerCase().replace(/_/g, ' ')
     );
@@ -164,9 +166,14 @@ export default function App() {
         const totalIng = recipe.ingredientsList.length;
         const matched = recipe.ingredientsList.filter((ing) => {
           const ingLower = ing.name.toLowerCase();
-          return userIngredientsLower.some(
+          const isDirectMatch = userIngredientsLower.some(
             (u) => ingLower.includes(u) || u.includes(ingLower.split(' ')[0])
           );
+          const isIdMatch = recipe.matchingIngredients?.some((mId) => {
+            const mClean = mId.toLowerCase().replace(/_/g, ' ');
+            return userIngredientsSet.has(mId) && ingLower.includes(mClean);
+          });
+          return isDirectMatch || isIdMatch || ing.isPantryMatch;
         });
 
         const missing = recipe.ingredientsList.filter((ing) => {
@@ -174,9 +181,14 @@ export default function App() {
           if (['salt', 'water', 'oil', 'cooking oil'].some((s) => ingLower.includes(s))) {
             return false;
           }
-          return !userIngredientsLower.some(
+          const isDirectMatch = userIngredientsLower.some(
             (u) => ingLower.includes(u) || u.includes(ingLower.split(' ')[0])
           );
+          const isIdMatch = recipe.matchingIngredients?.some((mId) => {
+            const mClean = mId.toLowerCase().replace(/_/g, ' ');
+            return userIngredientsSet.has(mId) && ingLower.includes(mClean);
+          });
+          return !isDirectMatch && !isIdMatch && !ing.isPantryMatch;
         });
 
         const score = totalIng > 0 ? (matched.length / totalIng) * 100 : 0;
@@ -192,6 +204,45 @@ export default function App() {
         // Cuisine filter
         if (selectedCuisine !== 'all') {
           const c = recipe.cuisine.toLowerCase();
+          if (
+            selectedCuisine === 'desserts-sweets' &&
+            !c.includes('dessert') &&
+            !c.includes('sweet') &&
+            !recipe.tags.includes('dessert') &&
+            !recipe.tags.includes('mithai-classic')
+          ) {
+            return false;
+          }
+          if (
+            selectedCuisine === 'asian' &&
+            !c.includes('asian') &&
+            !c.includes('thai') &&
+            !c.includes('japanese') &&
+            !c.includes('korean') &&
+            !c.includes('chinese')
+          ) {
+            return false;
+          }
+          if (selectedCuisine === 'thai' && !c.includes('thai')) {
+            return false;
+          }
+          if (selectedCuisine === 'japanese' && !c.includes('japanese')) {
+            return false;
+          }
+          if (selectedCuisine === 'korean' && !c.includes('korean')) {
+            return false;
+          }
+          if (selectedCuisine === 'biryani' && !c.includes('biryani')) {
+            return false;
+          }
+          if (
+            selectedCuisine === 'andhra-telugu' &&
+            !c.includes('andhra') &&
+            !c.includes('telugu') &&
+            !c.includes('hyderabad')
+          ) {
+            return false;
+          }
           if (selectedCuisine === 'indian' && !recipe.regionCategory.includes('indian')) {
             return false;
           }
@@ -201,7 +252,7 @@ export default function App() {
           if (selectedCuisine === 'north-indian' && !c.includes('north indian')) {
             return false;
           }
-          if (selectedCuisine === 'south-indian' && !c.includes('south indian')) {
+          if (selectedCuisine === 'south-indian' && !c.includes('south indian') && !c.includes('andhra')) {
             return false;
           }
           if (selectedCuisine === 'indo-chinese' && !c.includes('indo-chinese')) {

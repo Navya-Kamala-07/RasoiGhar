@@ -811,5 +811,1635 @@ export const CURATED_RECIPES: Recipe[] = [
       { ingredient: 'Tortillas', replacement: 'Indian Roti / Chapati or Pita bread', rationale: 'Fresh wheat flatbreads wrap fillings comfortably.' }
     ],
     wineOrBeveragePairing: 'Fresh lime agua fresca or crisp lager with lime wedge'
+  },
+  {
+    id: 'andhra-lemon-rice',
+    title: 'Authentic Andhra Lemon Rice (Chitrannam / Nimmakaya Pulihora)',
+    originalName: 'చిత్రాన్నం / నిమ్మకాయ పులిహోర (Nimmakaya Pulihora)',
+    cuisine: 'Andhra & Telugu',
+    regionCategory: 'indian',
+    description: 'The beloved Andhra temple and festival rice. Fluffy separated grains of rice folded in a crackling golden tempering of roasted peanuts (pallilu), chana dal, urad dal, mustard seeds, fresh curry leaves, ginger, slit green chillies, and freshly squeezed lemon juice (nimmakaya).',
+    cookingTimeMinutes: 15,
+    prepTimeMinutes: 10,
+    difficulty: 'Easy',
+    defaultServings: 3,
+    caloriesPerServing: 280,
+    tags: ['vegetarian', 'vegan', 'gluten-free', 'quick-under-30', 'comfort-food', 'andhra-special', 'temple-food'],
+    matchingIngredients: ['basmati_rice', 'lemon', 'peanuts', 'chana_dal', 'urad_dal', 'mustard_seeds', 'curry_leaves', 'green_chilli', 'dry_red_chillies', 'ginger', 'turmeric', 'asafoetida', 'ghee'],
+    additionalIngredientsNeeded: [
+      { name: 'Salt', optional: false, commonPantry: true },
+      { name: 'Cooking Oil or Sesame Oil', optional: false, commonPantry: true }
+    ],
+    flavorProfile: {
+      spiceLevel: 2,
+      savory: 4,
+      tangy: 5,
+      aromatic: 4,
+      sweet: 1
+    },
+    culinaryScience: 'Thermal denaturation of citrus: Squeezing lemon juice over direct fire or boiling oil converts limonin and natural flavanones into bitter compounds. Lemon juice must ALWAYS be folded into warm (not scorching) rice off heat. Cooling cooked rice beforehand with 1 tsp oil triggers amylose retrogradation, preventing grains from turning mushy when tossed.',
+    keyTechniques: [
+      { name: 'Pop & Crisp Dal Tempering', explanation: 'Frying chana dal, urad dal, and raw peanuts in medium oil until golden and crunchy before adding aromatics.' },
+      { name: 'Off-Heat Citrus Emulsion', explanation: 'Whisking fresh lemon juice with turmeric and warm seasoned oil off heat for vibrant yellow color without bitterness.' }
+    ],
+    ingredientsList: [
+      { name: 'Cooked Rice (Basmati or Sona Masoori)', amount: 3, unit: 'cups', notes: 'Cooled completely to room temp with grains separated', isPantryMatch: true },
+      { name: 'Fresh Lemon Juice (Nimmakaya Rasam)', amount: 3, unit: 'tbsp', notes: 'Squeezed fresh from 2 juicy lemons', isPantryMatch: true },
+      { name: 'Raw Peanuts / Groundnuts (Pallilu)', amount: 3, unit: 'tbsp', notes: 'Gives classic festive crunch', isPantryMatch: true },
+      { name: 'Chana Dal (Senaga Pappu)', amount: 1, unit: 'tbsp', notes: 'For golden nutty bite', isPantryMatch: true },
+      { name: 'Urad Dal (Minapa Pappu)', amount: 1, unit: 'tsp', notes: 'Split white lentils', isPantryMatch: true },
+      { name: 'Black Mustard Seeds (Avalu)', amount: 1, unit: 'tsp', isPantryMatch: true },
+      { name: 'Curry Leaves (Karivepaku)', amount: 15, unit: 'leaves', notes: 'Fresh sprig', isPantryMatch: true },
+      { name: 'Green Chillies (Pasi Mirapakayalu)', amount: 2, unit: 'pieces', notes: 'Slit lengthwise', isPantryMatch: true },
+      { name: 'Dried Red Chillies (Endu Mirapakayalu)', amount: 2, unit: 'pieces', notes: 'Broken in halves', isPantryMatch: true },
+      { name: 'Fresh Ginger (Allam)', amount: 1, unit: 'tsp', notes: 'Finely minced or grated', isPantryMatch: true },
+      { name: 'Turmeric Powder (Pasupu)', amount: 0.5, unit: 'tsp', notes: 'For bright auspicious temple yellow', isPantryMatch: true },
+      { name: 'Asafoetida (Inguva)', amount: 0.25, unit: 'tsp', isPantryMatch: true },
+      { name: 'Cooking Oil or Sesame Oil', amount: 2, unit: 'tbsp' },
+      { name: 'Salt', amount: 1, unit: 'tsp', notes: 'To taste' }
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Cool & Season the Rice',
+        instruction: 'Spread 3 cups of cooked fluffy rice onto a wide plate or parat. Drizzle 1 tsp oil, half the turmeric powder, and 1 tsp salt over the rice. Gently toss with your fingers or a flat spatula to coat without mashing the grains. Let it cool to lukewarm.',
+        chefTip: 'Never add hot tadka directly to steaming hot wet rice, or it will steam-cook into sticky porridge. Cool grains hold their shape.',
+        sensoryCue: 'Rice grains separate cleanly with an even soft golden glow.',
+        timerMinutes: 3
+      },
+      {
+        stepNumber: 2,
+        title: 'Roast the Crunchy Peanuts & Dals',
+        instruction: 'Heat 2 tbsp oil in a heavy kadai or pan over medium-low flame. Add the raw peanuts (pallilu) first and fry for 2 minutes until light pink and fragrant. Add chana dal and urad dal; fry for 1 minute until all dals turn golden brown and nutty.',
+        sensoryCue: 'Peanuts crackle lightly and aroma of roasted lentils fills the kitchen.',
+        timerMinutes: 3
+      },
+      {
+        stepNumber: 3,
+        title: 'The Sizzling Andhra Karivepaku Tadka',
+        instruction: 'Add mustard seeds (avalu) to the oil; let them pop and crackle vigorously. Toss in broken dried red chillies, slit green chillies, minced ginger, curry leaves (karivepaku), and asafoetida (inguva). Stir for 30 seconds until curry leaves turn crisp and fragrant.',
+        chefTip: 'Adding ginger and curry leaves towards the end prevents burning while releasing essential citrus-terpene oils.',
+        sensoryCue: 'Curry leaves sizzle loudly and turn translucent dark emerald.',
+        timerMinutes: 1
+      },
+      {
+        stepNumber: 4,
+        title: 'Infuse Turmeric & Combine Off-Heat',
+        instruction: 'Turn off the stove! Stir in the remaining turmeric powder into the warm oil. Pour the entire hot sizzling tempering directly over the cooled rice. Let sit for 1 minute so the oil scents the rice.',
+        timerMinutes: 1
+      },
+      {
+        stepNumber: 5,
+        title: 'Fold Lemon Juice (Nimmakaya Rasam) & Rest',
+        instruction: 'Pour 3 tbsp fresh lemon juice evenly over the rice. Gently fold from the edges towards the center using a flat silicone spatula until every grain is glistening yellow and speckled with green chillies, crunchy nuts, and curry leaves. Let rest for 10 minutes before serving so flavors marry.',
+        chefTip: 'Chitrannam tastes even better 20 minutes after resting as the lemon juice penetrates the rice grains.',
+        sensoryCue: 'Tangy, zesty citrus punch balanced by nutty roasted dals and warm ginger.',
+        timerMinutes: 2
+      }
+    ],
+    substitutions: [
+      { ingredient: 'Lemon Juice', replacement: 'Tamarind pulp (for Chintapandu Pulihora) or Raw Mango (Mamidikaya Pulihora)', rationale: 'Both are classic Andhra temple pulihora variations.' },
+      { ingredient: 'Peanuts', replacement: 'Roasted Cashews', rationale: 'Gives royal rich festive texture.' }
+    ],
+    wineOrBeveragePairing: 'Appalam / Papadam, Avakaya pickle, and cooling curd on the side'
+  },
+  {
+    id: 'andhra-gongura-pappu',
+    title: 'Andhra Gongura Pappu (Tangy Sorrel Leaves Dal)',
+    originalName: 'గోంగూర పప్పు (Andhra Gongura Dal)',
+    cuisine: 'Andhra & Telugu',
+    regionCategory: 'indian',
+    description: 'The undisputed soul of Telugu comfort cuisine. Nutty yellow toor dal (kandi pappu) cooked with tart red-stemmed gongura leaves, green chillies, and garlic, mashed smooth, and crowned with a ghee-fried red chilli, garlic, and mustard tempering.',
+    cookingTimeMinutes: 25,
+    prepTimeMinutes: 10,
+    difficulty: 'Easy',
+    defaultServings: 4,
+    caloriesPerServing: 220,
+    tags: ['vegetarian', 'vegan-option', 'gluten-free', 'high-protein', 'andhra-special'],
+    matchingIngredients: ['toor_dal', 'gongura', 'green_chilli', 'garlic', 'onion', 'mustard_seeds', 'cumin_seeds', 'curry_leaves', 'dry_red_chillies', 'turmeric', 'ghee', 'asafoetida'],
+    additionalIngredientsNeeded: [
+      { name: 'Water', optional: false, commonPantry: true },
+      { name: 'Salt', optional: false, commonPantry: true }
+    ],
+    flavorProfile: {
+      spiceLevel: 4,
+      savory: 4,
+      tangy: 5,
+      aromatic: 4,
+      sweet: 1
+    },
+    culinaryScience: 'Gongura leaves contain high levels of natural oxalic and hydroxycitric acids. Cooking dal first before thoroughly integrating gongura ensures the dal softens completely, as intense acid inhibits the gelatinization of dal pectins. Ghee tempering with crushed garlic balances the tangy astringency.',
+    keyTechniques: [
+      { name: 'Pappu Ghotna (Lentil Mashing)', explanation: 'Using a traditional wooden churner (Pappu Gutti) to mash dal and wilted gongura into a thick velvety consistency.' }
+    ],
+    ingredientsList: [
+      { name: 'Toor Dal (Kandi Pappu)', amount: 1, unit: 'cup', notes: 'Rinsed clean', isPantryMatch: true },
+      { name: 'Fresh Gongura Leaves (Punti Kura)', amount: 2, unit: 'cups packed', notes: 'Washed and roughly chopped', isPantryMatch: true },
+      { name: 'Green Chillies (Pasi Mirapakayalu)', amount: 4, unit: 'pieces', notes: 'Slit (Andhra food loves heat)', isPantryMatch: true },
+      { name: 'Garlic Cloves (Vellulli)', amount: 6, unit: 'cloves', notes: 'Lightly crushed with skin', isPantryMatch: true },
+      { name: 'Onion (Ullipayalu)', amount: 0.5, unit: 'medium', notes: 'Roughly sliced', isPantryMatch: true },
+      { name: 'Turmeric Powder (Pasupu)', amount: 0.5, unit: 'tsp', isPantryMatch: true },
+      { name: 'Mustard Seeds (Avalu)', amount: 1, unit: 'tsp', isPantryMatch: true },
+      { name: 'Cumin Seeds (Jeelakarra)', amount: 1, unit: 'tsp', isPantryMatch: true },
+      { name: 'Dried Red Chillies (Endu Mirapakayalu)', amount: 2, unit: 'pieces', isPantryMatch: true },
+      { name: 'Curry Leaves (Karivepaku)', amount: 10, unit: 'leaves', isPantryMatch: true },
+      { name: 'Ghee (Desi Neyyi)', amount: 2, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Asafoetida (Inguva)', amount: 0.25, unit: 'tsp', isPantryMatch: true },
+      { name: 'Salt', amount: 1.25, unit: 'tsp', notes: 'Gongura needs good salt to balance tang' }
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Pressure Cook Dal & Gongura',
+        instruction: 'In a pressure cooker, add rinsed toor dal, 2.5 cups water, turmeric, sliced onions, slit green chillies, and washed gongura leaves. Pressure cook for 4 whistles on medium heat (or simmer in pot covered for 25 minutes) until dal is completely tender.',
+        timerMinutes: 18
+      },
+      {
+        stepNumber: 2,
+        title: 'Mash to Velvety Consistency',
+        instruction: 'Once pressure releases naturally, open cooker. Add 1.25 tsp salt. Use a wooden masher (pappu gutti) or back of a ladle to mash the cooked dal and gongura into a thick, rustic, velvety paste.',
+        sensoryCue: 'The bright green leaves blend into the yellow lentils creating an olive-golden creamy stew.',
+        timerMinutes: 2
+      },
+      {
+        stepNumber: 3,
+        title: 'The Fiery Andhra Ghee Pop (Thalimpu)',
+        instruction: 'Heat 2 tbsp ghee in a small pan. Add mustard seeds; let crackle. Add cumin seeds, crushed garlic cloves, broken dried red chillies, curry leaves, and a generous pinch of asafoetida (inguva). Fry until garlic turns golden brown and intoxicating.',
+        sensoryCue: 'Golden toasted garlic sizzle followed by intense aroma of ghee and curry leaves.',
+        timerMinutes: 2
+      },
+      {
+        stepNumber: 4,
+        title: 'Pour Tempering & Serve over Rice',
+        instruction: 'Pour the sizzling thalimpu directly into the mashed gongura pappu. Mix well and cover for 2 minutes. Serve hot poured over steamed white rice with an extra spoonful of melted desi ghee (neyyi) and papad.',
+        timerMinutes: 2
+      }
+    ],
+    substitutions: [
+      { ingredient: 'Gongura Leaves', replacement: 'Spinach + 2 tbsp lemon juice or raw mango', rationale: 'Recreates the leafy texture with bright natural tang.' },
+      { ingredient: 'Toor Dal', replacement: 'Yellow Moong Dal (Pesara Pappu)', rationale: 'Lighter on the stomach with faster cooking time.' }
+    ],
+    wineOrBeveragePairing: 'Steamed rice with a dollop of ghee and Andhra Avakaya (mango pickle)'
+  },
+  {
+    id: 'hyderabadi-dum-biryani',
+    title: 'Royal Hyderabadi Nizami Dum Biryani',
+    originalName: 'हैदराबादी दम बिरयानी / హైదరాబాదీ దమ్ బిర్యానీ',
+    cuisine: 'Hyderabadi Biryani',
+    regionCategory: 'indian',
+    description: 'The undisputed monarch of Indian biryanis from the Nizams of Hyderabad. Aged long-grain basmati rice parboiled with whole royal spices, layered over a luscious yoghurt marinade with fresh mint, coriander, and paneer/vegetables, crowned with crispy golden birista, saffron-infused milk, and sealed hermetically under dough for gentle Dum Pukht steaming.',
+    cookingTimeMinutes: 45,
+    prepTimeMinutes: 25,
+    difficulty: 'Medium',
+    defaultServings: 4,
+    caloriesPerServing: 440,
+    tags: ['biryani', 'hyderabadi', 'royal-indian', 'special-occasion', 'high-protein'],
+    matchingIngredients: ['basmati_rice', 'saffron', 'birista', 'yogurt', 'ghee', 'mint', 'cilantro', 'paneer', 'green_chilli', 'ginger', 'garlic', 'cardamom', 'shahi_jeera', 'kewra_rose_water', 'cloves', 'cinnamon'],
+    additionalIngredientsNeeded: [
+      { name: 'Milk (warm, for blooming saffron)', optional: false, commonPantry: true },
+      { name: 'Wheat flour (Atta) dough for sealed rim', optional: true, commonPantry: true },
+      { name: 'Salt', optional: false, commonPantry: true }
+    ],
+    flavorProfile: {
+      spiceLevel: 3,
+      savory: 5,
+      tangy: 3,
+      aromatic: 5,
+      sweet: 2
+    },
+    culinaryScience: 'The 70% Parboil (Kanika rule): Basmati grains must be drained when the grain elongates but the inner core still has a chalky dot (70% cooked). During the sealed dum, trapped steam from the bottom marinade circulates, allowing the parboiled grains to absorb the aromatic moisture and steam expand to maximum length without breaking. Saffron yields crocin (color) and safranal (fragrance) best in warm milk lipids.',
+    keyTechniques: [
+      { name: 'The 70% Rice Parboil (Kanika Test)', explanation: 'Boiling rice in heavily salted water with whole spices; draining when grain breaks into 3 pieces under fingernail pressure.' },
+      { name: 'Dum Pukht Sealed Steaming', explanation: 'Sealing the pot with dough or double-foil over a heavy tawa diffuser so indirect heat circulates steam without scorching the bottom.' },
+      { name: 'Birista Onion Browning', explanation: 'Slow-frying onions until mahogany brown and crispy, releasing natural sweet caramelization.' }
+    ],
+    ingredientsList: [
+      { name: 'Extra Long Grain Basmati Rice', amount: 2, unit: 'cups', notes: 'Soaked in cold water for 30 minutes', isPantryMatch: true },
+      { name: 'Paneer or Vegetables/Chicken', amount: 300, unit: 'grams', notes: 'Cubed into bite-sized pieces', isPantryMatch: true },
+      { name: 'Thick Whisked Yogurt (Curd)', amount: 1, unit: 'cup', notes: 'Forms marinade base', isPantryMatch: true },
+      { name: 'Crispy Fried Onions (Birista)', amount: 1, unit: 'cup', notes: 'Divided use', isPantryMatch: true },
+      { name: 'Royal Saffron Strands', amount: 1, unit: 'pinch', notes: 'Steeped in 3 tbsp warm milk', isPantryMatch: true },
+      { name: 'Desi Ghee', amount: 3, unit: 'tbsp', notes: 'For drizzling through layers', isPantryMatch: true },
+      { name: 'Fresh Mint Leaves (Pudina)', amount: 0.5, unit: 'cup', notes: 'Torn fresh', isPantryMatch: true },
+      { name: 'Fresh Cilantro', amount: 0.5, unit: 'cup', notes: 'Finely chopped', isPantryMatch: true },
+      { name: 'Ginger-Garlic Paste', amount: 1.5, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Green Chillies', amount: 3, unit: 'pieces', notes: 'Slit lengthwise', isPantryMatch: true },
+      { name: 'Shahi Jeera (Royal Caraway)', amount: 1, unit: 'tsp', isPantryMatch: true },
+      { name: 'Green Cardamom Pods', amount: 5, unit: 'pods', isPantryMatch: true },
+      { name: 'Cloves', amount: 4, unit: 'pieces', isPantryMatch: true },
+      { name: 'Cinnamon Stick', amount: 2, unit: 'inches', isPantryMatch: true },
+      { name: 'Kewra & Rose Essence Water', amount: 1, unit: 'tsp', isPantryMatch: true },
+      { name: 'Garam Masala / Biryani Masala', amount: 1, unit: 'tsp', isPantryMatch: true },
+      { name: 'Turmeric & Kashmiri Chilli', amount: 1, unit: 'tsp each', isPantryMatch: true }
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Marinate the Filling',
+        instruction: 'In a bowl, mix yogurt with ginger-garlic paste, slit green chillies, turmeric, Kashmiri chilli, garam masala, half of the fried onions (birista), half of the mint and cilantro, 1 tbsp ghee, and 1 tsp salt. Toss paneer or vegetables/chicken into this rich marinade. Let rest for 20 minutes.',
+        timerMinutes: 20
+      },
+      {
+        stepNumber: 2,
+        title: 'Parboil the Fragrant Basmati Rice (70% Cook)',
+        instruction: 'Bring 6 cups of water to a rolling boil in a wide pot. Add 1.5 tbsp salt (water must taste salty like soup), 1 tsp shahi jeera, 3 cardamom pods, 3 cloves, and 1 cinnamon stick. Add soaked basmati rice. Cook on high heat for exactly 5–6 minutes. Test a grain: it should feel long and tender outside, but firm with an uncooked core inside (breaks in 3 pieces). Drain immediately in a colander.',
+        chefTip: 'Never leave drained rice sitting in steam; fluff gently so grains separate like needles.',
+        sensoryCue: 'Rice grains lengthen noticeably and float gracefully to the surface.',
+        timerMinutes: 6
+      },
+      {
+        stepNumber: 3,
+        title: 'Layer the Handi',
+        instruction: 'In a heavy-bottomed pot, spread 1 tbsp ghee on the base. Layer the marinated mixture evenly on the bottom. Spread half the warm parboiled rice over the marinade. Scatter a layer of mint, cilantro, and birista. Add the remaining rice on top. Poke 4 gentle holes with a wooden spoon handle through the rice down to the base.',
+        timerMinutes: 4
+      },
+      {
+        stepNumber: 4,
+        title: 'Crown with Saffron Milk & Aromatics',
+        instruction: 'Drizzle the golden saffron milk across the rice in stripes. Pour remaining 2 tbsp melted ghee and kewra/rose water through the holes so steam channels carry fragrance throughout. Scatter the remaining crispy birista on top.',
+        sensoryCue: 'Rich aroma of saffron, mint, and toasted onions rises from the pot.',
+        timerMinutes: 2
+      },
+      {
+        stepNumber: 5,
+        title: 'Seal Hermetically & Cook on Dum',
+        instruction: 'Cover pot with aluminum foil or roll a coil of wheat dough along the rim; press lid down tightly to seal all steam. Place a heavy flat iron tawa on the stove over medium heat. Place the sealed biryani pot on the tawa (indirect heat). Cook for 10 minutes on medium flame, then reduce to lowest flame for 18 minutes. Turn off heat and let rest undisturbed for 10 minutes.',
+        chefTip: 'Do not peek during dum! Breaking the seal lets out the vapor that cooks the top layer.',
+        timerMinutes: 28
+      },
+      {
+        stepNumber: 6,
+        title: 'The Royal Reveal & Gentle Fluff',
+        instruction: 'Unseal the lid. Inhale the billow of royal steam. Using a flat saucing spoon or saucer, gently scoop from the bottom edge upwards to reveal dual-colored white and saffron grains interspersed with rich spiced masala. Serve with chilled Mirchi ka Salan or Onion-Mint Raita.',
+        sensoryCue: 'Fluffy, separate grains like pearls, with heady perfume of saffron and cardamom.',
+        timerMinutes: 2
+      }
+    ],
+    substitutions: [
+      { ingredient: 'Paneer', replacement: 'Chicken or Mutton or Mushrooms/Potatoes', rationale: 'Traditional Hyderabadi meat biryani follows the exact same dum technique.' },
+      { ingredient: 'Saffron', replacement: 'Turmeric milk + pinch cardamom', rationale: 'Gives the golden royal hue.' }
+    ],
+    wineOrBeveragePairing: 'Mirchi ka Salan and chilled Masala Chaas or dry sparkling wine'
+  },
+  {
+    id: 'kolkata-shahi-biryani',
+    title: 'Authentic Kolkata Royal Shahi Biryani',
+    originalName: 'কলকাতা বিরিয়ানি (Kolkata Dum Biryani)',
+    cuisine: 'Kolkata Biryani',
+    regionCategory: 'indian',
+    description: 'Born when the legendary Nawab Wajid Ali Shah was exiled from Lucknow to Kolkata. Renowned for its melt-in-mouth golden saffron-braised potatoes, hard-boiled eggs, delicate aromatic basmati rice, and subtle perfume of meetha attar, rose water, and green cardamom.',
+    cookingTimeMinutes: 45,
+    prepTimeMinutes: 20,
+    difficulty: 'Medium',
+    defaultServings: 4,
+    caloriesPerServing: 420,
+    tags: ['biryani', 'kolkata-special', 'bengali-mughlai', 'comfort-food'],
+    matchingIngredients: ['basmati_rice', 'potato', 'eggs', 'saffron', 'ghee', 'onion', 'garlic', 'ginger', 'yogurt', 'cloves', 'cardamom', 'kewra_rose_water', 'cinnamon'],
+    additionalIngredientsNeeded: [
+      { name: 'Warm Milk (for saffron infusion)', optional: false, commonPantry: true },
+      { name: 'Salt', optional: false, commonPantry: true }
+    ],
+    flavorProfile: {
+      spiceLevel: 2,
+      savory: 4,
+      tangy: 2,
+      aromatic: 5,
+      sweet: 2
+    },
+    culinaryScience: 'Slow braising halved potatoes in spiced yakhni stock causes potato starches to absorb glutamate-rich aromatic cooking juices into their cellular walls, turning the potato into the undisputed star of the dish. Meetha attar (edible sweet musk) must be used in microscopic quantities (1-2 drops) to scent the vapor.',
+    keyTechniques: [
+      { name: 'Saffron-Yakhni Potato Braising', explanation: 'Parboiling and frying large peeled potatoes in spiced ghee broth so they turn golden outside and buttery soft inside.' },
+      { name: 'Subtle Meetha Attar Misting', explanation: 'Infusing milk with rose, kewra, and edible attar to achieve the signature delicate Awadhi-Bengali perfume.' }
+    ],
+    ingredientsList: [
+      { name: 'Basmati Rice', amount: 2, unit: 'cups', notes: 'Soaked for 30 minutes', isPantryMatch: true },
+      { name: 'Large Potatoes', amount: 3, unit: 'pieces', notes: 'Peeled and cut in halves', isPantryMatch: true },
+      { name: 'Hard Boiled Eggs', amount: 4, unit: 'pieces', notes: 'Peeled with tiny slits', isPantryMatch: true },
+      { name: 'Onions', amount: 2, unit: 'large', notes: 'Thinly sliced for birista', isPantryMatch: true },
+      { name: 'Ginger-Garlic Paste', amount: 1.5, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Plain Yogurt', amount: 0.5, unit: 'cup', isPantryMatch: true },
+      { name: 'Desi Ghee', amount: 3, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Royal Saffron Strands', amount: 1, unit: 'pinch', notes: 'Steeped in 1/4 cup warm milk', isPantryMatch: true },
+      { name: 'Kewra & Rose Essence', amount: 1, unit: 'tsp', isPantryMatch: true },
+      { name: 'Green Cardamom Pods', amount: 5, unit: 'pods', isPantryMatch: true },
+      { name: 'Cloves', amount: 4, unit: 'pieces', isPantryMatch: true },
+      { name: 'Cinnamon Stick', amount: 2, unit: 'sticks', isPantryMatch: true },
+      { name: 'Kashmiri Chilli & Nutmeg Powder', amount: 0.5, unit: 'tsp each', isPantryMatch: true }
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Braise & Brown the Kolkata Potatoes',
+        instruction: 'Boil peeled halved potatoes in salted water with a pinch of turmeric and 1 cardamom for 8 minutes until 70% soft. Drain and pat dry. In a skillet, heat 2 tbsp ghee and fry the potatoes and boiled eggs for 3–4 minutes until golden yellow with crisp blistered skins. Set aside.',
+        chefTip: 'The potato is the soul of Kolkata biryani; never skip the saffron water boil before frying.',
+        timerMinutes: 12
+      },
+      {
+        stepNumber: 2,
+        title: 'Cook Fragrant Mild Awadhi Gravy',
+        instruction: 'In the remaining ghee, fry sliced onions until golden brown birista. Remove half for garnish. To the remaining onions, add ginger-garlic paste, yogurt, Kashmiri chilli, pinch of nutmeg, and 1/2 cup water. Simmer for 6 minutes until oil glistens.',
+        timerMinutes: 6
+      },
+      {
+        stepNumber: 3,
+        title: 'Parboil Basmati to 70%',
+        instruction: 'Boil soaked basmati rice in salted water with cloves, cardamom, and cinnamon for 5 minutes. Drain while still having a slight firm bite in the center.',
+        timerMinutes: 5
+      },
+      {
+        stepNumber: 4,
+        title: 'Assemble Layers with Saffron-Rose Milk',
+        instruction: 'In your biryani pot, place the savory gravy base. Arrange the braised golden potatoes and boiled eggs across the base. Spread the parboiled rice over them. Drizzle saffron milk, kewra/rose water, and remaining ghee over the rice. Sprinkle fried onions.',
+        timerMinutes: 3
+      },
+      {
+        stepNumber: 5,
+        title: 'Sealed Dum Cooking',
+        instruction: 'Seal tightly with foil and lid. Place on a heavy tawa over medium-low heat. Cook for 20 minutes on gentle dum. Let rest 10 minutes before gently serving with a flat ladle.',
+        sensoryCue: 'Heavenly mild sweet-spiced aroma; potatoes that cut effortlessly like butter.',
+        timerMinutes: 20
+      }
+    ],
+    substitutions: [
+      { ingredient: 'Eggs', replacement: 'Paneer cubes or chicken', rationale: 'Paneer braised in the same gravy takes on wonderful saffron perfume.' }
+    ],
+    wineOrBeveragePairing: 'Light Bengali chaas (Ghol) or fresh green salad with lime'
+  },
+  {
+    id: 'thalassery-malabar-biryani',
+    title: 'Malabar Coast Thalassery Biryani',
+    originalName: 'തലശ്ശേരി ബിരിയാണി (Thalassery Neychoru Biryani)',
+    cuisine: 'Malabar Coastal Biryani',
+    regionCategory: 'indian',
+    description: 'The crowning glory of North Kerala coastal cuisine. Made with fragrant indigenous short-grain Kaima / Jeerakasala rice sautéed in pure ghee (Neychoru), layered with a tangy green-chilli and fennel-spiced masala, and adorned with ghee-fried cashews and golden raisins.',
+    cookingTimeMinutes: 40,
+    prepTimeMinutes: 20,
+    difficulty: 'Medium',
+    defaultServings: 4,
+    caloriesPerServing: 410,
+    tags: ['biryani', 'kerala-special', 'coastal-indian', 'festive-food'],
+    matchingIngredients: ['seeraga_samba_rice', 'ghee', 'cashews_raisins', 'fennel_seeds', 'green_chilli', 'onion', 'tomato', 'ginger', 'garlic', 'mint', 'cilantro', 'turmeric'],
+    additionalIngredientsNeeded: [
+      { name: 'Water', optional: false, commonPantry: true },
+      { name: 'Salt', optional: false, commonPantry: true }
+    ],
+    flavorProfile: {
+      spiceLevel: 3,
+      savory: 5,
+      tangy: 3,
+      aromatic: 5,
+      sweet: 2
+    },
+    culinaryScience: 'Short-grain Kaima rice has a higher amylopectin-to-amylose ratio than long Basmati, which makes each tiny grain tender, plush, and extraordinarily absorbent of the spiced ghee and rich coastal masala. Fennel seeds release anethole, creating an unmistakable coastal aroma that cuts through richness.',
+    keyTechniques: [
+      { name: 'Neychoru Ghee Rice Sauté', explanation: 'Tossing short-grain rice in warm ghee and spices before adding boiling water until each grain glazes.' },
+      { name: 'Malabar Green Chilli & Fennel Paste', explanation: 'Crushing green chillies, ginger, garlic, and fennel seeds together for the signature spicy-citrus coastal profile.' }
+    ],
+    ingredientsList: [
+      { name: 'Kaima / Jeerakasala or Seeraga Samba Rice', amount: 2, unit: 'cups', notes: 'Washed and drained', isPantryMatch: true },
+      { name: 'Desi Ghee', amount: 4, unit: 'tbsp', notes: 'Divided use', isPantryMatch: true },
+      { name: 'Cashews & Golden Raisins', amount: 3, unit: 'tbsp', notes: 'Ghee fried till golden', isPantryMatch: true },
+      { name: 'Onions', amount: 3, unit: 'medium', notes: 'Thinly sliced', isPantryMatch: true },
+      { name: 'Tomatoes', amount: 2, unit: 'medium', notes: 'Chopped', isPantryMatch: true },
+      { name: 'Fennel Seeds (Saunf)', amount: 1, unit: 'tsp', notes: 'Lightly crushed', isPantryMatch: true },
+      { name: 'Green Chillies', amount: 5, unit: 'pieces', notes: 'Crushed with ginger & garlic', isPantryMatch: true },
+      { name: 'Ginger & Garlic Paste', amount: 2, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Fresh Mint & Cilantro', amount: 0.5, unit: 'cup', notes: 'Finely chopped', isPantryMatch: true },
+      { name: 'Turmeric & Garam Masala', amount: 0.5, unit: 'tsp each', isPantryMatch: true },
+      { name: 'Water for Rice', amount: 3.5, unit: 'cups', notes: 'Boiling hot' },
+      { name: 'Salt', amount: 1.5, unit: 'tsp' }
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Fry the Crunchy Garnish',
+        instruction: 'Heat 2 tbsp ghee in a pot. Fry cashews and raisins until golden and plump. Remove and set aside. In the same ghee, fry 1 sliced onion until deep golden brown birista. Remove and set aside.',
+        timerMinutes: 5
+      },
+      {
+        stepNumber: 2,
+        title: 'Cook the Neychoru (Aromatic Ghee Rice)',
+        instruction: 'In the remaining ghee, add 1 cinnamon stick, 3 cardamom pods, and drained Kaima rice. Sauté rice gently for 2 minutes until glossy. Pour in 3.5 cups of boiling water and 1 tsp salt. Cover and cook on low heat for 8 minutes until water is absorbed and grains are soft and separate.',
+        sensoryCue: 'Intoxicating buttery aroma as ghee-coated grains absorb boiling water.',
+        timerMinutes: 8
+      },
+      {
+        stepNumber: 3,
+        title: 'Prepare the Zesty Malabar Masala',
+        instruction: 'In a separate skillet with 1 tbsp ghee/oil, sauté remaining sliced onions until soft. Add crushed green chillies, ginger, garlic, and crushed fennel seeds. Cook for 2 minutes. Add chopped tomatoes, turmeric, garam masala, and 1/2 tsp salt. Cook for 6 minutes until tomatoes break down into a thick jammy spiced sauce.',
+        timerMinutes: 8
+      },
+      {
+        stepNumber: 4,
+        title: 'Layer & Steam on Dum',
+        instruction: 'In a heavy pot, spread the Malabar masala at the bottom. Layer the fragrant Neychoru ghee rice on top. Scatter fresh mint, cilantro, fried cashews, golden raisins, and brown onions over the rice. Drizzle 1 tbsp melted ghee on top.',
+        timerMinutes: 3
+      },
+      {
+        stepNumber: 5,
+        title: 'Gentle Coastal Dum',
+        instruction: 'Seal with foil and lid. Cook on low heat over a tawa for 15 minutes. Fluff gently before serving hot with Kerala coconut chutney, dates pickle, and crunchy pappadam.',
+        timerMinutes: 15
+      }
+    ],
+    substitutions: [
+      { ingredient: 'Kaima Rice', replacement: 'Seeraga Samba or Jasmine Rice', rationale: 'Small fragrant grains provide identical tender mouthfeel.' }
+    ],
+    wineOrBeveragePairing: 'Hot spiced Sulaimani tea with cardamom and fresh mint'
+  },
+  {
+    id: 'dindigul-thalappakatti-biryani',
+    title: 'Dindigul Thalappakatti Seeraga Samba Biryani',
+    originalName: 'திண்டுக்கல் தலப்பாகட்டி பிரியாணி (Dindigul Biryani)',
+    cuisine: 'Dindigul Biryani',
+    regionCategory: 'indian',
+    description: 'The legendary peppery biryani from southern Tamil Nadu. Cooked exclusively with small-grained aromatic Seeraga Samba rice, stone-pounded black peppercorns, shallots (sambar onions), green chillies, fresh mint, and thick curd.',
+    cookingTimeMinutes: 35,
+    prepTimeMinutes: 15,
+    difficulty: 'Easy',
+    defaultServings: 3,
+    caloriesPerServing: 380,
+    tags: ['biryani', 'south-indian', 'tamil-nadu-special', 'peppery-bold'],
+    matchingIngredients: ['seeraga_samba_rice', 'onion', 'yogurt', 'mint', 'cilantro', 'green_chilli', 'garlic', 'ginger', 'ghee', 'cinnamon', 'cloves'],
+    additionalIngredientsNeeded: [
+      { name: 'Black Peppercorns (coarsely ground)', optional: false, commonPantry: true },
+      { name: 'Water', optional: false, commonPantry: true },
+      { name: 'Salt', optional: false, commonPantry: true }
+    ],
+    flavorProfile: {
+      spiceLevel: 4,
+      savory: 5,
+      tangy: 3,
+      aromatic: 4,
+      sweet: 1
+    },
+    culinaryScience: 'Piperine in freshly cracked black pepper produces a warm, slow-blooming sensation that activates salivary enzymes, while the tiny surface area of Seeraga Samba rice absorbs the peppery broth right to the core of every single grain.',
+    keyTechniques: [
+      { name: 'Stone-Pounded Black Pepper & Mint Paste', explanation: 'Blending shallots, mint, coriander, and coarse black pepper into a rustic green paste.' }
+    ],
+    ingredientsList: [
+      { name: 'Seeraga Samba Rice', amount: 1.5, unit: 'cups', notes: 'Soaked for 20 minutes', isPantryMatch: true },
+      { name: 'Shallots / Small Onions (or Red Onion)', amount: 1.5, unit: 'cups', notes: 'Finely sliced', isPantryMatch: true },
+      { name: 'Ginger & Garlic Paste', amount: 1.5, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Fresh Mint & Coriander Paste', amount: 0.5, unit: 'cup', notes: 'Ground together with 3 green chillies', isPantryMatch: true },
+      { name: 'Black Peppercorns', amount: 1, unit: 'tbsp', notes: 'Freshly coarse-ground', isPantryMatch: true },
+      { name: 'Thick Curd / Yogurt', amount: 0.5, unit: 'cup', isPantryMatch: true },
+      { name: 'Desi Ghee', amount: 2, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Whole Spices (Cardamom, Cloves, Cinnamon)', amount: 1, unit: 'tbsp mixed', isPantryMatch: true },
+      { name: 'Water', amount: 2.75, unit: 'cups' },
+      { name: 'Salt', amount: 1.25, unit: 'tsp' }
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Sauté Spices & Shallots in Ghee',
+        instruction: 'Heat 2 tbsp ghee and 1 tbsp oil in a heavy cooker or pot. Add cinnamon, cardamom, cloves, and sliced shallots. Sauté for 6 minutes until onions are golden and caramelized.',
+        timerMinutes: 6
+      },
+      {
+        stepNumber: 2,
+        title: 'Add Fresh Green Herb Paste & Black Pepper',
+        instruction: 'Stir in ginger-garlic paste, the ground mint-coriander-green chilli paste, and coarse black pepper. Cook for 3 minutes until oil separates from the edges.',
+        sensoryCue: 'Sharp spicy mint and fresh pepper fragrance wakes up your senses.',
+        timerMinutes: 3
+      },
+      {
+        stepNumber: 3,
+        title: 'Whisk Curd & Bring Broth to Boil',
+        instruction: 'Lower heat and whisk in the curd and salt. Pour in 2.75 cups of water. Bring to a rolling boil.',
+        timerMinutes: 4
+      },
+      {
+        stepNumber: 4,
+        title: 'Add Seeraga Samba Rice & Simmer',
+        instruction: 'Drain the soaked Seeraga Samba rice and add to the boiling broth. Stir once gently. Cook uncovered on medium heat for 5 minutes until water reduces to the level of the rice grains.',
+        timerMinutes: 5
+      },
+      {
+        stepNumber: 5,
+        title: 'Dum Cook & Fluff',
+        instruction: 'Cover with a tight lid. Reduce heat to lowest setting and cook for 12 minutes (or 1 whistle on low flame in pressure cooker). Turn off heat and let rest 10 minutes. Fluff gently and serve with Onion Thayir Pachadi (Raita).',
+        timerMinutes: 12
+      }
+    ],
+    substitutions: [
+      { ingredient: 'Shallots', replacement: 'Red Onions finely diced', rationale: 'Gives identical sweet caramelized body.' }
+    ],
+    wineOrBeveragePairing: 'Onion Thayir Pachadi (Raita) with fresh green chillies and roasted papad'
+  },
+  {
+    id: 'sindhi-spicy-biryani',
+    title: 'Zesty Sindhi Dum Biryani with Aloo Bukhara',
+    originalName: 'سنڌي برياني / सिंधी दम बिरयानी',
+    cuisine: 'Sindhi Biryani',
+    regionCategory: 'indian',
+    description: 'Renowned as the boldest and zestiest of all biryanis. Layered with tender spiced potatoes, sweet-and-sour dried plums (Aloo Bukhara), tomatoes, green chillies, mint, and long basmati grains with dual-tone saffron and crimson speckles.',
+    cookingTimeMinutes: 40,
+    prepTimeMinutes: 20,
+    difficulty: 'Medium',
+    defaultServings: 4,
+    caloriesPerServing: 430,
+    tags: ['biryani', 'sindhi-special', 'spicy-tangy', 'bold-flavors'],
+    matchingIngredients: ['basmati_rice', 'potato', 'tomato', 'yogurt', 'dried_plums', 'green_chilli', 'onion', 'mint', 'cumin_seeds', 'kashmiri_chilli', 'ghee'],
+    additionalIngredientsNeeded: [
+      { name: 'Salt', optional: false, commonPantry: true },
+      { name: 'Water', optional: false, commonPantry: true }
+    ],
+    flavorProfile: {
+      spiceLevel: 5,
+      savory: 5,
+      tangy: 5,
+      aromatic: 4,
+      sweet: 2
+    },
+    culinaryScience: 'Aloo Bukhara (dried sour plums) soften during the steam dum, releasing concentrated malic and tartaric acids that puncture through the fiery heat of green chillies and heavy spices, creating an addictive sweet-sour-spicy contrast.',
+    keyTechniques: [
+      { name: 'Aloo Bukhara Plump Simmering', explanation: 'Simmering dried plums in the spicy yogurt gravy so they absorb savory juices while releasing tangy sweetness.' }
+    ],
+    ingredientsList: [
+      { name: 'Basmati Rice', amount: 2, unit: 'cups', notes: 'Soaked for 30 minutes', isPantryMatch: true },
+      { name: 'Potatoes', amount: 2, unit: 'large', notes: 'Peeled and quartered', isPantryMatch: true },
+      { name: 'Dried Sour Plums (Aloo Bukhara)', amount: 6, unit: 'pieces', notes: 'Crucial for Sindhi tang', isPantryMatch: true },
+      { name: 'Tomatoes', amount: 3, unit: 'medium', notes: 'Finely chopped', isPantryMatch: true },
+      { name: 'Onions', amount: 2, unit: 'medium', notes: 'Sliced', isPantryMatch: true },
+      { name: 'Yogurt', amount: 0.75, unit: 'cup', isPantryMatch: true },
+      { name: 'Green Chillies', amount: 4, unit: 'pieces', notes: 'Slit', isPantryMatch: true },
+      { name: 'Fresh Mint Leaves', amount: 0.5, unit: 'cup', isPantryMatch: true },
+      { name: 'Kashmiri Chilli & Cumin Powder', amount: 1, unit: 'tsp each', isPantryMatch: true },
+      { name: 'Ghee or Oil', amount: 3, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Salt', amount: 1.5, unit: 'tsp' }
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Build the Fiery Sindhi Masala with Plums',
+        instruction: 'Heat ghee in a pot. Fry sliced onions until golden. Add ginger, garlic, chopped tomatoes, yogurt, potatoes, and dried sour plums (Aloo Bukhara). Add chilli powder, cumin, turmeric, and 1 tsp salt. Simmer covered for 10 minutes until potatoes are almost tender and plums are plump.',
+        sensoryCue: 'Vibrant red bubbling gravy with a sharp tangy tomato and plum aroma.',
+        timerMinutes: 10
+      },
+      {
+        stepNumber: 2,
+        title: 'Parboil the Rice',
+        instruction: 'Boil basmati rice with whole spices and salt for 5 minutes until 70% cooked. Drain.',
+        timerMinutes: 5
+      },
+      {
+        stepNumber: 3,
+        title: 'Layer with Fresh Mint & Chillies',
+        instruction: 'Layer the parboiled rice over the rich plum and potato masala. Scatter lots of fresh mint leaves and slit green chillies across the surface.',
+        timerMinutes: 3
+      },
+      {
+        stepNumber: 4,
+        title: 'Sealed Dum Cooking',
+        instruction: 'Cover tightly with foil and lid. Cook on low heat over a tawa for 18 minutes. Let rest for 10 minutes before gently scooping from the base to serve.',
+        timerMinutes: 18
+      }
+    ],
+    substitutions: [
+      { ingredient: 'Dried Plums (Aloo Bukhara)', replacement: 'Prunes + 1 tbsp fresh lemon juice', rationale: 'Gives the same sour-sweet concentrated fruit balance.' }
+    ],
+    wineOrBeveragePairing: 'Chilled sweet lassi or cucumber raita to balance the fiery spice'
+  },
+  {
+    id: 'crispy-masala-dosa',
+    title: 'Authentic Crispy Masala Dosa with Spiced Potato Mash (Alugadda Masala)',
+    originalName: 'మసాలా దోశ (Masala Dosa) / मसाला डोसा',
+    cuisine: 'South Indian',
+    regionCategory: 'indian',
+    description: 'Golden, paper-crisp fermented rice and urad dal crepe folded over a warm, mustard-and-curry-leaf tempered potato onion masala. Served with fresh coconut chutney and hot sambar.',
+    cookingTimeMinutes: 20,
+    prepTimeMinutes: 15,
+    difficulty: 'Medium',
+    defaultServings: 3,
+    caloriesPerServing: 340,
+    proteinGrams: 9.5,
+    fiberGrams: 4.8,
+    tags: ['vegetarian', 'gluten-free', 'south-indian-special', 'comfort-food', 'high-protein'],
+    matchingIngredients: ['idli_rice', 'urad_dal', 'potato', 'onion', 'mustard_seeds', 'curry_leaves', 'ginger', 'green_chilli', 'turmeric', 'ghee'],
+    additionalIngredientsNeeded: [
+      { name: 'Salt', optional: false, commonPantry: true },
+      { name: 'Water & Oil', optional: false, commonPantry: true }
+    ],
+    flavorProfile: {
+      spiceLevel: 2,
+      savory: 5,
+      tangy: 2,
+      aromatic: 4,
+      sweet: 1
+    },
+    culinaryScience: 'Lactic acid and wild yeast fermentation breaks down complex starches into lactic acid and carbon dioxide bubbles, giving dosa batter its signature tang and delicate lacy crispness on a seasoned cast iron tawa.',
+    keyTechniques: [
+      { name: 'Centrifugal Batter Swirl', explanation: 'Pouring batter in the center of a hot seasoned tawa and spiraling outwards in one continuous smooth motion with the base of a ladle.' },
+      { name: 'Ghee Crisping', explanation: 'Drizzling ghee along the outer circumference so fat seeps underneath, releasing the crepe cleanly with deep golden Maillard coloration.' }
+    ],
+    ingredientsList: [
+      { name: 'Fermented Dosa Batter (or Idli Rice + Urad Dal)', amount: 2, unit: 'cups', isPantryMatch: true },
+      { name: 'Boiled Potatoes (crushed)', amount: 3, unit: 'medium', isPantryMatch: true },
+      { name: 'Sliced Onions (Ullipayalu)', amount: 1, unit: 'medium', isPantryMatch: true },
+      { name: 'Black Mustard Seeds (Avalu)', amount: 1, unit: 'tsp', isPantryMatch: true },
+      { name: 'Fresh Curry Leaves (Karivepaku)', amount: 10, unit: 'leaves', isPantryMatch: true },
+      { name: 'Minced Ginger & Green Chillies', amount: 1, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Turmeric Powder', amount: 0.5, unit: 'tsp', isPantryMatch: true },
+      { name: 'Desi Ghee or Butter', amount: 2, unit: 'tbsp', isPantryMatch: true }
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Temper the Spiced Potato Masala',
+        instruction: 'Heat 1 tbsp oil in a skillet. Pop mustard seeds, curry leaves, ginger, and green chillies. Sauté sliced onions until translucent. Stir in turmeric and salt. Add crushed boiled potatoes with 3 tbsp water, mashing lightly into a soft, spreadable masala.',
+        sensoryCue: 'Vibrant sunshine-yellow aroma of sweet sautéed onions, ginger, and curry leaves.',
+        timerMinutes: 6
+      },
+      {
+        stepNumber: 2,
+        title: 'Heat and Season the Tawa',
+        instruction: 'Heat a heavy cast iron or non-stick tawa over medium-high heat. Splash droplets of water; they should dance and sizzle away immediately. Wipe with a lightly oiled cloth or half an onion.',
+        timerMinutes: 2
+      },
+      {
+        stepNumber: 3,
+        title: 'Swirl the Dosa Crepe',
+        instruction: 'Pour 1 ladle of batter into the center. Using the back of the ladle, spread in concentric circles from center outwards to the edges until paper-thin.',
+        timerMinutes: 1
+      },
+      {
+        stepNumber: 4,
+        title: 'Roast with Ghee & Fill',
+        instruction: 'Drizzle 1 tsp ghee around the rim and top. Cook on medium flame until edges curl and underside turns deep roasted golden brown. Place 3 tbsp warm potato masala in the center, fold over like an envelope, and slide onto a plate.',
+        sensoryCue: 'Irresistible roasted nutty aroma of toasted rice and ghee.',
+        timerMinutes: 3
+      }
+    ],
+    substitutions: [
+      { ingredient: 'Dosa Batter', replacement: 'Instant Rava Dosa batter (Sooji + Rice Flour + Yogurt)', rationale: 'Makes an instant lace-crisp crepe without overnight fermentation.' }
+    ],
+    wineOrBeveragePairing: 'Frothy hot South Indian Filter Coffee (Filter Kaapi)'
+  },
+  {
+    id: 'medu-vada',
+    title: 'South Indian Crispy Medu Vada (గారెలు / मेदु वड़ा)',
+    originalName: 'గారెలు (Garelu) / Medu Vada',
+    cuisine: 'South Indian',
+    regionCategory: 'indian',
+    description: 'Golden-fried fluffy doughnut-shaped lentil fritters with a glass-like crisp crust and an airy, pillowy interior infused with fresh ginger, peppercorns, curry leaves, and asafoetida.',
+    cookingTimeMinutes: 18,
+    prepTimeMinutes: 15,
+    difficulty: 'Medium',
+    defaultServings: 3,
+    caloriesPerServing: 260,
+    proteinGrams: 11.2,
+    fiberGrams: 5.1,
+    tags: ['vegetarian', 'vegan', 'gluten-free', 'high-protein', 'south-indian-special'],
+    matchingIngredients: ['urad_dal', 'curry_leaves', 'ginger', 'green_chilli', 'asafoetida', 'fresh_coconut'],
+    additionalIngredientsNeeded: [
+      { name: 'Whole Black Peppercorns', optional: false, commonPantry: true },
+      { name: 'Frying Oil', optional: false, commonPantry: true },
+      { name: 'Salt', optional: false, commonPantry: true }
+    ],
+    flavorProfile: {
+      spiceLevel: 2,
+      savory: 5,
+      tangy: 1,
+      aromatic: 4,
+      sweet: 1
+    },
+    culinaryScience: 'Aeration of urad dal paste: Beating soaked urad dal creates a thick protein-starch foam that traps micro-air bubbles. When submerged in hot oil at 180°C, the moisture inside rapidly converts to steam, expanding the fritter before the starch crust sets, guaranteeing a cloud-soft interior.',
+    keyTechniques: [
+      { name: 'Float Test Batter Check', explanation: 'Dropping a teaspoon of whipped batter into a bowl of water; if it floats like a cloud without dissolving, the aeration is perfect.' },
+      { name: 'Wet-Palm Hole Shaping', explanation: 'Shaping batter on a wet palm and poking a center hole with your wet thumb so hot oil flows through the center for even cooking.' }
+    ],
+    ingredientsList: [
+      { name: 'Whole White Urad Dal (Minapappu)', amount: 1, unit: 'cup', notes: 'Soaked for 3 hours and ground thick with minimal water', isPantryMatch: true },
+      { name: 'Finely Minced Ginger', amount: 1, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Slit Green Chillies', amount: 2, unit: 'pieces', isPantryMatch: true },
+      { name: 'Fresh Curry Leaves (chopped)', amount: 10, unit: 'leaves', isPantryMatch: true },
+      { name: 'Cracked Black Peppercorns', amount: 1, unit: 'tsp', isPantryMatch: true },
+      { name: 'Asafoetida (Hing / Inguva)', amount: 0.25, unit: 'tsp', isPantryMatch: true },
+      { name: 'Fresh Coconut Bits', amount: 2, unit: 'tbsp', isPantryMatch: true }
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Whip the Batter to Cloud Consistency',
+        instruction: 'Grind soaked drained urad dal using only 2–3 tablespoons of ice water into a thick, fluffy paste. Vigorously beat with a spatula for 3 minutes to incorporate air until light and fluffy. Test by dropping a dollop in water—it must float.',
+        timerMinutes: 5
+      },
+      {
+        stepNumber: 2,
+        title: 'Season with Aromatics',
+        instruction: 'Fold in minced ginger, green chillies, cracked peppercorns, curry leaves, coconut bits, asafoetida, and salt.',
+        timerMinutes: 2
+      },
+      {
+        stepNumber: 3,
+        title: 'Shape and Fry',
+        instruction: 'Wet your fingers and palm. Take a golf ball of batter, flatten slightly, press a hole through the center, and gently drop into medium-hot oil (180°C / 355°F). Fry in small batches, turning gently until golden and crackling on all sides.',
+        sensoryCue: 'Rapid rhythmic bubbling slows down as the crust turns deep bronze.',
+        timerMinutes: 6
+      }
+    ],
+    substitutions: [
+      { ingredient: 'Urad Dal', replacement: 'Split yellow moong dal', rationale: 'Produces lighter, crispy Moong Dal Vadas.' }
+    ],
+    wineOrBeveragePairing: 'Fresh tender coconut water or hot South Indian Sambar'
+  },
+  {
+    id: 'kerala-avial',
+    title: 'Kerala Sadya Avial (Mixed Vegetables in Coconut Cumin Paste)',
+    originalName: 'അവിയൽ (Avial) / అవియల్',
+    cuisine: 'South Indian',
+    regionCategory: 'indian',
+    description: 'The crowning jewel of Kerala Sadya feasts. A vibrant medley of drumsticks, carrots, beans, and raw plantain steamed tender, enveloped in a rich stone-ground coconut, cumin, and green chilli paste, finished with unheated raw coconut oil and bruised curry leaves.',
+    cookingTimeMinutes: 22,
+    prepTimeMinutes: 15,
+    difficulty: 'Easy',
+    defaultServings: 4,
+    caloriesPerServing: 210,
+    proteinGrams: 6.2,
+    fiberGrams: 6.5,
+    tags: ['vegetarian', 'vegan', 'gluten-free', 'south-indian-special', 'high-protein'],
+    matchingIngredients: ['fresh_coconut', 'drumstick', 'carrots', 'curry_leaves', 'cumin_seeds', 'green_chilli', 'yogurt', 'turmeric'],
+    additionalIngredientsNeeded: [
+      { name: 'Coconut Oil', optional: false, commonPantry: true },
+      { name: 'Salt', optional: false, commonPantry: true }
+    ],
+    flavorProfile: {
+      spiceLevel: 2,
+      savory: 4,
+      tangy: 3,
+      aromatic: 5,
+      sweet: 2
+    },
+    culinaryScience: 'Avial relies on cold-pressed raw coconut oil poured at the very end off heat. Heating coconut oil destroys volatile lactones; drizzling it raw over steaming hot vegetables captures the intense tropical nuttiness that defines authentic Onam feast cooking.',
+    keyTechniques: [
+      { name: 'Uniform Baton Cutting', explanation: 'Cutting all vegetables into precise 2-inch batons so they cook at equal rates.' },
+      { name: 'Raw Oil & Leaf Infusion', explanation: 'Pouring raw virgin coconut oil over hot curry leaves directly on the finished dish and covering immediately.' }
+    ],
+    ingredientsList: [
+      { name: 'Mixed Vegetables (Drumsticks, Carrots, Beans, Ash Gourd)', amount: 3, unit: 'cups batons', isPantryMatch: true },
+      { name: 'Fresh Grated Coconut', amount: 1.5, unit: 'cups', isPantryMatch: true },
+      { name: 'Cumin Seeds (Jeelakarra)', amount: 1, unit: 'tsp', isPantryMatch: true },
+      { name: 'Green Chillies', amount: 3, unit: 'pieces', isPantryMatch: true },
+      { name: 'Fresh Curry Leaves', amount: 15, unit: 'leaves', isPantryMatch: true },
+      { name: 'Whisked Yogurt or Tamarind', amount: 3, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Virgin Coconut Oil', amount: 2, unit: 'tbsp', isPantryMatch: true }
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Steam the Vegetables',
+        instruction: 'Cook the baton vegetables in a shallow pan with 1/2 cup water, turmeric, and 1 tsp salt until tender-crisp (not mushy).',
+        timerMinutes: 10
+      },
+      {
+        stepNumber: 2,
+        title: 'Coarse Coconut-Cumin Grind',
+        instruction: 'Pulse grated coconut, cumin seeds, and green chillies into a coarse, thick paste using only 2 tbsp water (do not make a smooth puree).',
+        timerMinutes: 3
+      },
+      {
+        stepNumber: 3,
+        title: 'Combine & Simmer',
+        instruction: 'Gently fold the coconut paste into the warm vegetables. Simmer on low heat for 3 minutes until raw aroma mellows. Stir in whisked yogurt off heat.',
+        timerMinutes: 3
+      },
+      {
+        stepNumber: 4,
+        title: 'The Raw Coconut Oil Seal',
+        instruction: 'Turn off the stove. Drizzle 2 tbsp pure coconut oil and fresh curry leaves over the top. Cover with lid for 5 minutes before serving.',
+        sensoryCue: 'Intoxicating tropical coconut and fresh curry leaf aroma.',
+        timerMinutes: 5
+      }
+    ],
+    substitutions: [
+      { ingredient: 'Yogurt', replacement: 'Raw Mango slices (Mamidikaya)', rationale: 'Traditional summer Sadya method providing fruit acidity.' }
+    ],
+    wineOrBeveragePairing: 'Chilled spiced Sambharam (Kerala salted buttermilk)'
+  },
+  {
+    id: 'royal-gulab-jamun',
+    title: 'Royal Shahi Gulab Jamun in Rose-Cardamom Saffron Syrup (गुलाब जामुन)',
+    originalName: 'गुलाब जामुन (Gulab Jamun)',
+    cuisine: 'Desserts & Sweets',
+    regionCategory: 'indian',
+    description: 'The king of Indian desserts. Velvety, melt-in-the-mouth milk-solid dumplings gently fried in desi ghee to an even mahogany brown, then soaked in warm, fragrant rose-water, cardamom, and saffron nectar.',
+    cookingTimeMinutes: 25,
+    prepTimeMinutes: 15,
+    difficulty: 'Medium',
+    defaultServings: 4,
+    caloriesPerServing: 310,
+    proteinGrams: 6.5,
+    fiberGrams: 1.2,
+    tags: ['vegetarian', 'dessert', 'mithai-classic', 'festive'],
+    matchingIngredients: ['condensed_milk', 'all_purpose_flour', 'sugar', 'cardamom_powder', 'saffron', 'kewra_rose_water', 'ghee', 'pistachios'],
+    additionalIngredientsNeeded: [
+      { name: 'Baking Soda', optional: false, commonPantry: true },
+      { name: 'Water', optional: false, commonPantry: true }
+    ],
+    flavorProfile: {
+      spiceLevel: 1,
+      savory: 1,
+      tangy: 1,
+      aromatic: 5,
+      sweet: 5
+    },
+    culinaryScience: 'Osmotic absorption and low-temperature frying: Frying jamuns on low heat (140°C) allows the heat to penetrate to the center without scorching the exterior. Once fried, soaking them in warm (not boiling) single-thread sugar syrup creates an osmotic pressure gradient, drawing syrup deep into the dough matrix without collapsing.',
+    keyTechniques: [
+      { name: 'Gentle Crack-Free Dough Ball Rolling', explanation: 'Rolling small balls between palms with zero cracks to prevent dumplings from bursting in hot fat.' },
+      { name: 'Continuous Oil Swirling', explanation: 'Swirling the hot ghee gently around the dumplings without touching them with the skimmer so they rotate and brown uniformly.' }
+    ],
+    ingredientsList: [
+      { name: 'Mawa / Khoya (or Milk Powder + Cream)', amount: 1, unit: 'cup', isPantryMatch: true },
+      { name: 'All-Purpose Flour (Maida)', amount: 3, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Baking Soda', amount: 0.125, unit: 'tsp', isPantryMatch: true },
+      { name: 'Granulated Sugar', amount: 1.5, unit: 'cups', isPantryMatch: true },
+      { name: 'Green Cardamom Powder', amount: 0.5, unit: 'tsp', isPantryMatch: true },
+      { name: 'Saffron Strands & Rose Water', amount: 1, unit: 'pinch + 1 tsp', isPantryMatch: true },
+      { name: 'Desi Ghee (for deep frying)', amount: 2, unit: 'cups', isPantryMatch: true }
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Prepare the Aromatic Saffron-Rose Syrup',
+        instruction: 'Simmer sugar and 1.5 cups water for 7 minutes until slightly sticky (half-thread consistency). Stir in crushed cardamom powder, saffron strands, and rose water. Keep warm on the lowest flame.',
+        sensoryCue: 'Glossy golden nectar with heady floral cardamom steam.',
+        timerMinutes: 7
+      },
+      {
+        stepNumber: 2,
+        title: 'Knead the Soft Jamun Dough',
+        instruction: 'Gently combine mawa, flour, and baking soda with 1-2 tbsp warm milk. Knead softly into a smooth, pliable dough. Roll into 12 small crack-free balls.',
+        timerMinutes: 5
+      },
+      {
+        stepNumber: 3,
+        title: 'Gentle Low-Flame Ghee Frying',
+        instruction: 'Heat ghee on low flame (approx 140°C). Gently slide dumplings in. Swirl the ghee with your ladle so the jamuns rotate continuously. Fry for 8 minutes until evenly deep mahogany golden-brown.',
+        sensoryCue: 'Dumplings float and expand to double their original size.',
+        timerMinutes: 8
+      },
+      {
+        stepNumber: 4,
+        title: 'Syrup Soaking',
+        instruction: 'Transfer hot fried jamuns directly into warm sugar syrup. Let them soak for at least 30 minutes until plump and drenched to the core. Garnish with slivered pistachios.',
+        timerMinutes: 30
+      }
+    ],
+    substitutions: [
+      { ingredient: 'Mawa / Khoya', replacement: 'Milk Powder (1 cup) + Butter (2 tbsp) + Milk (3 tbsp)', rationale: 'Standard foolproof homemade substitute for fresh milk solids.' }
+    ],
+    wineOrBeveragePairing: 'Warm cardamom milk or a scoop of velvety vanilla bean ice cream'
+  },
+  {
+    id: 'traditional-mysore-pak',
+    title: 'Authentic Royal Mysore Pak (ಮೈಸೂರು ಪಾಕ್ / మైసూర్ పాక్)',
+    originalName: 'ಮೈಸೂರು ಪಾಕ್ (Mysore Pak)',
+    cuisine: 'Desserts & Sweets',
+    regionCategory: 'indian',
+    description: 'The celebrated royal confection born in the Mysore Palace kitchens. Crafted from roasted gram flour (besan), piping hot pure desi ghee, and caramelized sugar syrup to achieve a porous, melt-in-the-mouth honeycomb texture.',
+    cookingTimeMinutes: 20,
+    prepTimeMinutes: 10,
+    difficulty: 'Medium',
+    defaultServings: 6,
+    caloriesPerServing: 380,
+    proteinGrams: 5.0,
+    fiberGrams: 2.1,
+    tags: ['vegetarian', 'gluten-free', 'south-indian-special', 'dessert', 'mithai-classic'],
+    matchingIngredients: ['besan', 'ghee', 'sugar', 'cardamom_powder'],
+    additionalIngredientsNeeded: [
+      { name: 'Water', optional: false, commonPantry: true }
+    ],
+    flavorProfile: {
+      spiceLevel: 1,
+      savory: 2,
+      tangy: 1,
+      aromatic: 5,
+      sweet: 5
+    },
+    culinaryScience: 'Thermal foam expansion: Ladling smoking-hot ghee into the bubbling besan and sugar syrup creates micro-cavities of steam. As the starch and proteins set around the fat bubbles, it creates the signature airy honeycomb "jali" that melts instantly on the tongue.',
+    keyTechniques: [
+      { name: 'Continuous Hot Ghee Ladling', explanation: 'Adding hot shimmering ghee in small continuous ladles while stirring vigorously until the mixture froths and pulls away from the pan.' }
+    ],
+    ingredientsList: [
+      { name: 'Besan (Gram Flour / Senaga Pindi)', amount: 1, unit: 'cup', notes: 'Sifted fine and dry-roasted 3 minutes', isPantryMatch: true },
+      { name: 'Pure Desi Ghee', amount: 1.25, unit: 'cups', notes: 'Kept hot in a separate pan', isPantryMatch: true },
+      { name: 'Granulated Sugar', amount: 1.5, unit: 'cups', isPantryMatch: true },
+      { name: 'Cardamom Powder', amount: 0.25, unit: 'tsp', isPantryMatch: true }
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Single-String Sugar Syrup',
+        instruction: 'Boil sugar with 1/2 cup water in a heavy kadai until it reaches 1-string consistency (112°C).',
+        timerMinutes: 6
+      },
+      {
+        stepNumber: 2,
+        title: 'Incorporate Roasted Besan',
+        instruction: 'Lower heat and gradually whisk in sifted besan, ensuring zero lumps.',
+        timerMinutes: 3
+      },
+      {
+        stepNumber: 3,
+        title: 'The Hot Ghee Frothing Phase',
+        instruction: 'Keep melted ghee hot on another burner. Gradually ladle hot ghee into the besan mixture, stirring vigorously. The mixture will froth and absorb the ghee. Continue until the mixture turns frothy and porous like a sponge.',
+        sensoryCue: 'Furious golden foaming with a toasted caramelized chickpea aroma.',
+        timerMinutes: 8
+      },
+      {
+        stepNumber: 4,
+        title: 'Pour and Slice',
+        instruction: 'Pour immediately into a greased deep tray. Do not press hard. Let it cool for 15 minutes, then slice into diamond blocks while still warm.',
+        timerMinutes: 15
+      }
+    ],
+    substitutions: [
+      { ingredient: 'Ghee', replacement: '50% Ghee + 50% Refined Oil', rationale: 'Yields a softer, lighter textured commercial Mysore Pak.' }
+    ],
+    wineOrBeveragePairing: 'Strong South Indian Kaapi or spiced Darjeeling tea'
+  },
+  {
+    id: 'thai-mango-sticky-rice',
+    title: 'Authentic Thai Mango Sticky Rice (ข้าวเหนียวมะม่วง - Khao Niew Mamuang)',
+    originalName: 'ข้าวเหนียวมะม่วง (Khao Niew Mamuang)',
+    cuisine: 'Desserts & Sweets',
+    regionCategory: 'international',
+    description: 'The iconic Thai street and royal dessert. Steamed sweet glutinous rice steeped in a warm, salted coconut cream reduction, paired with chilled sweet sliced mango and topped with crunchy toasted sesame seeds.',
+    cookingTimeMinutes: 25,
+    prepTimeMinutes: 15,
+    difficulty: 'Easy',
+    defaultServings: 3,
+    caloriesPerServing: 320,
+    proteinGrams: 4.8,
+    fiberGrams: 3.2,
+    tags: ['vegetarian', 'vegan', 'gluten-free', 'dessert', 'asian-special', 'comfort-food'],
+    matchingIngredients: ['sticky_rice', 'coconut_milk', 'mango', 'sugar', 'sesame_seeds'],
+    additionalIngredientsNeeded: [
+      { name: 'Salt', optional: false, commonPantry: true }
+    ],
+    flavorProfile: {
+      spiceLevel: 1,
+      savory: 2,
+      tangy: 3,
+      aromatic: 4,
+      sweet: 5
+    },
+    culinaryScience: 'Amylopectin gelation and salt-sugar contrast: Glutinous rice contains almost 100% amylopectin, creating sticky, translucent grains. Steaming rather than boiling preserves grain integrity so hot grains can drink in the sweet coconut infusion. A noticeable pinch of salt is essential to balance and heighten the tropical fruit sweetness.',
+    keyTechniques: [
+      { name: 'Warm Coconut Steeping', explanation: 'Folding freshly steamed hot sticky rice into warm sweetened coconut cream and covering for 20 minutes so every grain plumps up with coconut nectar.' }
+    ],
+    ingredientsList: [
+      { name: 'Glutinous Sticky Rice', amount: 1, unit: 'cup', notes: 'Soaked for 2 hours', isPantryMatch: true },
+      { name: 'Rich Coconut Milk', amount: 1, unit: 'can (400ml)', isPantryMatch: true },
+      { name: 'Sugar (Palm or White)', amount: 4, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Salt', amount: 0.5, unit: 'tsp', notes: 'Balances sweetness', isPantryMatch: true },
+      { name: 'Ripe Sweet Mangoes (sliced)', amount: 2, unit: 'whole', isPantryMatch: true },
+      { name: 'Toasted Sesame Seeds or Mung Dal', amount: 1, unit: 'tbsp', isPantryMatch: true }
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Steam the Glutinous Rice',
+        instruction: 'Drain soaked sticky rice. Steam in a steamer basket lined with cheesecloth or parchment for 20 minutes until translucent and tender.',
+        timerMinutes: 20
+      },
+      {
+        stepNumber: 2,
+        title: 'Warm the Coconut Nectar',
+        instruction: 'Heat 3/4 cup coconut milk with sugar and salt over low heat until dissolved (do not boil). Reserve 3 tbsp for drizzling.',
+        timerMinutes: 3
+      },
+      {
+        stepNumber: 3,
+        title: 'Infuse the Hot Rice',
+        instruction: 'Transfer hot steamed rice into a bowl. Pour the warm coconut milk over it. Gently stir, cover tightly, and let rest for 20 minutes to absorb.',
+        timerMinutes: 20
+      },
+      {
+        stepNumber: 4,
+        title: 'Plate with Mango',
+        instruction: 'Scoop warm coconut rice alongside fresh sliced chilled mango. Drizzle reserved salted coconut cream and scatter toasted sesame seeds.',
+        sensoryCue: 'Creamy, sweet, and gently salted coconut paired with floral mango perfume.',
+        timerMinutes: 2
+      }
+    ],
+    substitutions: [
+      { ingredient: 'Glutinous Sticky Rice', replacement: 'Jasmine rice + 1 tbsp tapioca starch cooked with extra water', rationale: 'Provides similar fragrant chewiness.' }
+    ],
+    wineOrBeveragePairing: 'Iced Thai tea with coconut milk or chilled jasmine tea'
+  },
+  {
+    id: 'thai-green-curry',
+    title: 'Authentic Thai Green Coconut Curry (แกงเขียวหวาน - Gaeng Kiew Wan)',
+    originalName: 'แกงเขียวหวาน (Gaeng Kiew Wan)',
+    cuisine: 'Asian & Thai',
+    regionCategory: 'international',
+    description: 'A fragrant, creamy Thai curry featuring a spicy green chilli, lemongrass, and galangal paste simmered in cracked coconut cream with tender tofu/chicken, bamboo shoots, and fresh basil leaves.',
+    cookingTimeMinutes: 20,
+    prepTimeMinutes: 10,
+    difficulty: 'Easy',
+    defaultServings: 3,
+    caloriesPerServing: 340,
+    proteinGrams: 12.0,
+    fiberGrams: 5.5,
+    tags: ['vegetarian', 'vegan', 'gluten-free', 'asian-special', 'quick-under-30'],
+    matchingIngredients: ['coconut_milk', 'tofu', 'green_chilli', 'lemongrass', 'fresh_basil', 'bell_pepper', 'soy_sauce', 'ginger', 'garlic'],
+    additionalIngredientsNeeded: [
+      { name: 'Brown Sugar', optional: false, commonPantry: true },
+      { name: 'Cooking Oil', optional: false, commonPantry: true }
+    ],
+    flavorProfile: {
+      spiceLevel: 4,
+      savory: 4,
+      tangy: 2,
+      aromatic: 5,
+      sweet: 3
+    },
+    culinaryScience: 'Cracking the coconut cream: Frying curry paste in the thick coconut cream layer separates the oil from the water emulsion. This blooms fat-soluble green herbal terpenes from lemongrass and kaffir lime at high heat without burning.',
+    keyTechniques: [
+      { name: 'Coconut Cream Separation', explanation: 'Simmering thick coconut cream until glossy green oil beads rise to the surface before adding broth.' }
+    ],
+    ingredientsList: [
+      { name: 'Firm Tofu (or Chicken)', amount: 250, unit: 'grams cubed', isPantryMatch: true },
+      { name: 'Green Curry Paste (Chillies, Lemongrass, Garlic, Ginger)', amount: 3, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Full-Fat Coconut Milk', amount: 1, unit: 'can', isPantryMatch: true },
+      { name: 'Sliced Bell Peppers & Zucchini', amount: 1.5, unit: 'cups', isPantryMatch: true },
+      { name: 'Soy Sauce or Tamari', amount: 1.5, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Brown Sugar', amount: 1, unit: 'tsp', isPantryMatch: true },
+      { name: 'Fresh Basil Leaves', amount: 0.5, unit: 'cup', isPantryMatch: true }
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Crack the Cream & Bloom Paste',
+        instruction: 'Spoon 1/2 cup of the thick coconut cream from the top of the can into a wok over medium-high heat. Simmer for 3 minutes until oil droplets separate. Add green curry paste and stir-fry for 2 minutes until intensely aromatic.',
+        sensoryCue: 'Sharp spicy herbal fragrance of lemongrass and sizzling green oil beads.',
+        timerMinutes: 5
+      },
+      {
+        stepNumber: 2,
+        title: 'Add Protein and Simmer',
+        instruction: 'Toss in cubed tofu (or chicken) and sear for 2 minutes. Pour in the remaining coconut milk, 1/2 cup water, soy sauce, and brown sugar. Simmer gently for 8 minutes.',
+        timerMinutes: 8
+      },
+      {
+        stepNumber: 3,
+        title: 'Finish with Vegetables & Basil',
+        instruction: 'Add bell pepper slices and simmer for 3 minutes until tender-crisp. Turn off the flame, toss in fresh basil leaves, and serve with jasmine or basmati rice.',
+        timerMinutes: 3
+      }
+    ],
+    substitutions: [
+      { ingredient: 'Green Curry Paste', replacement: 'Pound fresh green chillies + ginger + garlic + cumin + cilantro stems', rationale: 'Fresh homemade paste bursting with authentic flavor.' }
+    ],
+    wineOrBeveragePairing: 'Crisp Riesling or iced lemongrass tea'
+  },
+  {
+    id: 'classic-pad-thai',
+    title: 'Bangkok Street-Style Pad Thai Noodles (ผัดไทย)',
+    originalName: 'ผัดไทย (Pad Thai)',
+    cuisine: 'Asian & Thai',
+    regionCategory: 'international',
+    description: 'The world-famous Thai street noodle stir-fry. Chewy rice noodles wok-tossed in a sweet, sour, and savory tamarind sauce with pressed tofu, eggs, crunchy bean sprouts, scallions, and crushed roasted peanuts.',
+    cookingTimeMinutes: 15,
+    prepTimeMinutes: 10,
+    difficulty: 'Easy',
+    defaultServings: 2,
+    caloriesPerServing: 420,
+    proteinGrams: 14.5,
+    fiberGrams: 4.2,
+    tags: ['vegetarian', 'gluten-free', 'asian-special', 'quick-under-30', 'high-protein'],
+    matchingIngredients: ['rice_noodles', 'tofu', 'eggs', 'peanuts', 'tamarind', 'scallions', 'garlic', 'soy_sauce', 'bean_sprouts', 'lemon'],
+    additionalIngredientsNeeded: [
+      { name: 'Brown Sugar', optional: false, commonPantry: true },
+      { name: 'Cooking Oil', optional: false, commonPantry: true }
+    ],
+    flavorProfile: {
+      spiceLevel: 2,
+      savory: 4,
+      tangy: 5,
+      aromatic: 4,
+      sweet: 4
+    },
+    culinaryScience: 'The holy trinity of Pad Thai sauce: Equal parts tamarind pulp (tart acid), palm sugar (caramellic sweetness), and soy sauce (fermented umami). High heat wok flash-cooking caramelizes the sugars onto the chewy rice noodles without turning them to mush.',
+    keyTechniques: [
+      { name: 'Al Dente Noodle Soaking', explanation: 'Soaking flat rice noodles in warm water for 30 minutes until pliable rather than boiling, so they absorb sauce in the wok without breaking.' },
+      { name: 'The Wok Scramble Push', explanation: 'Pushing noodles to one side of the wok to crack and scramble eggs directly on bare metal before folding together.' }
+    ],
+    ingredientsList: [
+      { name: 'Flat Rice Noodles', amount: 150, unit: 'grams', notes: 'Soaked in warm water until pliable', isPantryMatch: true },
+      { name: 'Firm Tofu (cubed small)', amount: 150, unit: 'grams', isPantryMatch: true },
+      { name: 'Eggs', amount: 2, unit: 'whole', isPantryMatch: true },
+      { name: 'Tamarind Pulp', amount: 2, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Soy Sauce or Tamari', amount: 2, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Brown Sugar', amount: 2, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Crushed Roasted Peanuts (Pallilu)', amount: 3, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Scallions & Bean Sprouts', amount: 1, unit: 'cup combined', isPantryMatch: true }
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Whisk the 3-Ingredient Pad Thai Sauce',
+        instruction: 'Whisk tamarind pulp, soy sauce, and brown sugar with 2 tbsp warm water until sugar dissolves.',
+        timerMinutes: 2
+      },
+      {
+        stepNumber: 2,
+        title: 'Sear Tofu & Scramble Eggs',
+        instruction: 'Heat 2 tbsp oil in a smoking wok. Sear tofu cubes until golden. Push to the side. Crack eggs into the open space and scramble gently for 40 seconds.',
+        timerMinutes: 3
+      },
+      {
+        stepNumber: 3,
+        title: 'Toss Noodles in Sauce',
+        instruction: 'Toss in drained soaked rice noodles and pour the tamarind sauce over them. Stir-fry vigorously on high heat for 3 minutes until noodles absorb the sauce and turn glossy and chewy.',
+        sensoryCue: 'Caramelizing tamarind aroma and slight wok sizzle.',
+        timerMinutes: 3
+      },
+      {
+        stepNumber: 4,
+        title: 'Fold in Sprouts & Peanuts',
+        instruction: 'Toss in bean sprouts and green scallions for 30 seconds. Serve immediately topped with heaps of crushed roasted peanuts and fresh lime wedges.',
+        timerMinutes: 1
+      }
+    ],
+    substitutions: [
+      { ingredient: 'Tamarind Pulp', replacement: '1.5 tbsp fresh lime juice + 1 tbsp ketchup', rationale: 'Popular home cooking shortcut giving similar tangy fruit body.' }
+    ],
+    wineOrBeveragePairing: 'Chilled Singha / crisp lager or sparkling lime water'
+  },
+  {
+    id: 'japanese-shoyu-ramen',
+    title: 'Tokyo Shoyu Ramen in Rich Umami Broth (醤油ラーメン)',
+    originalName: '醤油ラーメン (Shoyu Ramen)',
+    cuisine: 'Asian & Japanese',
+    regionCategory: 'international',
+    description: 'A comforting, deeply savory Japanese noodle soup featuring chewy springy noodles bathed in an aromatic soy sauce and dashi-style broth enriched with toasted sesame oil, garlic, scallions, soft boiled eggs, and mushrooms.',
+    cookingTimeMinutes: 20,
+    prepTimeMinutes: 10,
+    difficulty: 'Easy',
+    defaultServings: 2,
+    caloriesPerServing: 460,
+    proteinGrams: 16.5,
+    fiberGrams: 4.0,
+    tags: ['asian-special', 'comfort-food', 'high-protein'],
+    matchingIngredients: ['ramen_noodles', 'soy_sauce', 'sesame_oil', 'eggs', 'mushrooms', 'garlic', 'ginger', 'scallions'],
+    additionalIngredientsNeeded: [
+      { name: 'Vegetable or Chicken Broth', optional: false, commonPantry: true }
+    ],
+    flavorProfile: {
+      spiceLevel: 1,
+      savory: 5,
+      tangy: 2,
+      aromatic: 4,
+      sweet: 2
+    },
+    culinaryScience: 'Kansui alkalinity and Tare base: Ramen noodles are made with alkaline mineral water (kansui) which prevents them from disintegrating in boiling hot broth. The soup base is created by layering concentrated "tare" (seasoned soy sauce and sesame oil) with hot broth to preserve top-note aromatics.',
+    keyTechniques: [
+      { name: 'Tare Bowl Assembly', explanation: 'Pouring hot broth directly over the soy and sesame tare in individual serving bowls rather than boiling everything together.' }
+    ],
+    ingredientsList: [
+      { name: 'Ramen Noodles', amount: 2, unit: 'bundles', isPantryMatch: true },
+      { name: 'Soy Sauce', amount: 3, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Toasted Sesame Oil', amount: 1, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Minced Garlic & Ginger', amount: 1, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Sliced Mushrooms', amount: 1, unit: 'cup', isPantryMatch: true },
+      { name: 'Soft-Boiled Eggs (halved)', amount: 2, unit: 'whole', isPantryMatch: true },
+      { name: 'Finely Sliced Scallions', amount: 0.5, unit: 'cup', isPantryMatch: true },
+      { name: 'Rich Vegetable or Chicken Broth', amount: 4, unit: 'cups', isPantryMatch: true }
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Simmer the Aromatic Broth',
+        instruction: 'Warm 1 tsp sesame oil in a pot. Sauté garlic, ginger, and mushrooms for 2 minutes. Pour in broth and soy sauce. Simmer for 10 minutes to extract deep savory umami.',
+        timerMinutes: 10
+      },
+      {
+        stepNumber: 2,
+        title: 'Boil Ramen Noodles',
+        instruction: 'In a separate pot of rapidly boiling water, cook ramen noodles for 2 to 3 minutes until chewy al dente. Drain thoroughly.',
+        timerMinutes: 3
+      },
+      {
+        stepNumber: 3,
+        title: 'Assemble the Ramen Bowls',
+        instruction: 'Divide noodles between two large warmed bowls. Ladle the piping hot broth and mushrooms over the noodles. Top with soft-boiled egg halves, sliced scallions, and a drizzle of toasted sesame oil.',
+        sensoryCue: 'Deep, comforting soy umami steam and glistening sesame aroma.',
+        timerMinutes: 2
+      }
+    ],
+    substitutions: [
+      { ingredient: 'Ramen Noodles', replacement: 'Spaghetti boiled with 1 tbsp baking soda', rationale: 'Baking soda alkalizes pasta water, turning standard wheat spaghetti springy and yellow like ramen.' }
+    ],
+    wineOrBeveragePairing: 'Hot roasted green tea (Hojicha) or chilled sake'
+  },
+  {
+    id: 'korean-bibimbap',
+    title: 'Korean Dolsot Bibimbap with Crispy Sesame Rice & Gochujang (비빔밥)',
+    originalName: '비빔밥 (Bibimbap)',
+    cuisine: 'Asian & Korean',
+    regionCategory: 'international',
+    description: 'The celebrated Korean rainbow bowl. Fluffy rice crisped on the bottom with toasted sesame oil, topped with arranged sautéed seasoned vegetables, fried egg, and a fiery-sweet gochujang sauce. Mix vigorously at the table before eating.',
+    cookingTimeMinutes: 20,
+    prepTimeMinutes: 15,
+    difficulty: 'Easy',
+    defaultServings: 2,
+    caloriesPerServing: 440,
+    proteinGrams: 15.2,
+    fiberGrams: 6.8,
+    tags: ['vegetarian', 'asian-special', 'high-protein'],
+    matchingIngredients: ['basmati_rice', 'sesame_oil', 'gochujang', 'soy_sauce', 'carrots', 'mushrooms', 'eggs', 'garlic', 'tofu'],
+    additionalIngredientsNeeded: [
+      { name: 'Toasted Sesame Seeds', optional: false, commonPantry: true }
+    ],
+    flavorProfile: {
+      spiceLevel: 3,
+      savory: 5,
+      tangy: 2,
+      aromatic: 4,
+      sweet: 3
+    },
+    culinaryScience: 'Nurungji crust formation: Heating cooked rice in a sesame-oiled hot skillet crystallizes starches on the bottom layer into a crackling, nutty crust ("nurungji") while keeping upper grains soft and ready to coat in gochujang glaze.',
+    keyTechniques: [
+      { name: 'Individual Namul Sauté', explanation: 'Cooking each colorful vegetable separately with a pinch of garlic and salt to maintain distinct textures and vivid colors.' }
+    ],
+    ingredientsList: [
+      { name: 'Cooked Rice', amount: 3, unit: 'cups', isPantryMatch: true },
+      { name: 'Toasted Sesame Oil', amount: 2, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Gochujang (Korean Chili Paste)', amount: 2, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Soy Sauce + Sugar + Vinegar', amount: 1, unit: 'tbsp each', isPantryMatch: true },
+      { name: 'Sliced Carrots, Mushrooms & Greens', amount: 2, unit: 'cups', isPantryMatch: true },
+      { name: 'Fried Eggs (crispy edges, runny yolk)', amount: 2, unit: 'whole', isPantryMatch: true }
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Whisk the Bibimbap Glaze',
+        instruction: 'Combine gochujang, soy sauce, 1 tsp sesame oil, 1 tsp sugar, and 1 tsp vinegar into a smooth glossy sauce.',
+        timerMinutes: 2
+      },
+      {
+        stepNumber: 2,
+        title: 'Flash Sauté the Toppings',
+        instruction: 'Stir-fry carrots, mushrooms, and greens individually in a hot skillet with a touch of garlic and salt for 1-2 minutes so each remains vibrant and crisp.',
+        timerMinutes: 5
+      },
+      {
+        stepNumber: 3,
+        title: 'Crisp the Sesame Rice Base',
+        instruction: 'Drizzle 1 tbsp sesame oil into a hot cast-iron skillet or heavy pan. Press cooked rice firmly across the bottom. Let it sizzle undisturbed over medium heat for 4 minutes until a golden crispy crust forms underneath.',
+        sensoryCue: 'Crackling sound and intensely nutty roasted sesame fragrance.',
+        timerMinutes: 4
+      },
+      {
+        stepNumber: 4,
+        title: 'Arrange and Serve',
+        instruction: 'Arrange the colorful sautéed toppings over the rice in sections. Place a fried egg with a runny yolk in the center. Spoon gochujang sauce on top. Mix vigorously together right before eating.',
+        timerMinutes: 2
+      }
+    ],
+    substitutions: [
+      { ingredient: 'Gochujang', replacement: 'Sriracha + 1/2 tsp brown sugar + 1/2 tsp miso', rationale: 'Balances fermented umami, heat, and sweetness.' }
+    ],
+    wineOrBeveragePairing: 'Cold roasted barley tea (Boricha) or light lager'
+  },
+  {
+    id: 'chettinad-pepper-roast',
+    title: 'Chettinad Spicy Black Pepper & Fennel Roast (செட்டிநாடு மசாலா)',
+    originalName: 'செட்டிநாடு மிளகு வறுவல் (Chettinad Pepper Roast)',
+    cuisine: 'South Indian',
+    regionCategory: 'indian',
+    description: 'An explosive Tamil Nadu specialty featuring paneer or mushrooms enrobed in a dark, dry-roasted Chettinad masala of black peppercorns, fennel seeds, cinnamon, curry leaves, and shallots.',
+    cookingTimeMinutes: 25,
+    prepTimeMinutes: 10,
+    difficulty: 'Medium',
+    defaultServings: 3,
+    caloriesPerServing: 290,
+    proteinGrams: 14.2,
+    fiberGrams: 4.5,
+    tags: ['vegetarian', 'south-indian-special', 'spicy-tangy', 'high-protein'],
+    matchingIngredients: ['paneer', 'black_pepper', 'fennel_seeds', 'curry_leaves', 'shallots', 'garlic', 'ginger', 'tomato', 'coriander_powder', 'ghee'],
+    additionalIngredientsNeeded: [
+      { name: 'Coconut Oil or Gingelly Oil', optional: false, commonPantry: true },
+      { name: 'Salt', optional: false, commonPantry: true }
+    ],
+    flavorProfile: {
+      spiceLevel: 5,
+      savory: 5,
+      tangy: 2,
+      aromatic: 5,
+      sweet: 1
+    },
+    culinaryScience: 'Dry-roasting whole spices to 160°C causes the essential oil piperine in black pepper to bond with anethole in fennel seeds, generating the intense, woody, lingering throat warmth that distinguishes authentic Chettinad culinary art.',
+    keyTechniques: [
+      { name: 'Chettinad Spice Bloom', explanation: 'Roasting whole black pepper, coriander seeds, cumin, and fennel on low heat until dark before coarse stone-grinding.' },
+      { name: 'Dry-Roast Masala Lacquering', explanation: 'Cooking down the masala until moisture completely evaporates, leaving the protein coated in a dry, intensely aromatic crust.' }
+    ],
+    ingredientsList: [
+      { name: 'Paneer or Portobello Mushrooms (cubed)', amount: 250, unit: 'grams', isPantryMatch: true },
+      { name: 'Whole Black Peppercorns', amount: 1.5, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Fennel Seeds (Saunf / Sombu)', amount: 1, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Fresh Curry Leaves', amount: 2, unit: 'sprigs', isPantryMatch: true },
+      { name: 'Small Shallots (Sambar Onions)', amount: 1, unit: 'cup', isPantryMatch: true },
+      { name: 'Ginger-Garlic Paste', amount: 1, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Tomato (chopped)', amount: 1, unit: 'medium', isPantryMatch: true },
+      { name: 'Cold-Pressed Sesame (Gingelly) or Coconut Oil', amount: 2, unit: 'tbsp', isPantryMatch: true }
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Toast the Chettinad Spice Blend',
+        instruction: 'Dry-roast whole black pepper, fennel seeds, and 1 sprig curry leaves in a pan on medium-low flame for 3 minutes until deeply aromatic and slightly smoky. Coarsely crush in a mortar or spice grinder.',
+        timerMinutes: 3
+      },
+      {
+        stepNumber: 2,
+        title: 'Sauté Shallots & Aromatics',
+        instruction: 'Heat oil in a heavy kadai. Add remaining curry leaves, sliced shallots, and ginger-garlic paste. Sauté until shallots are deep golden brown. Add chopped tomato and cook down until oil beads on the edges.',
+        timerMinutes: 5
+      },
+      {
+        stepNumber: 3,
+        title: 'Coat and Roast',
+        instruction: 'Add the cubed paneer or mushrooms and the freshly pounded Chettinad pepper-fennel powder. Stir-fry vigorously on high heat for 4 minutes until the dark spiced paste clings tightly to every piece with zero watery gravy.',
+        sensoryCue: 'Intensely sharp black pepper aroma with herbal fennel sweetness.',
+        timerMinutes: 4
+      }
+    ],
+    substitutions: [
+      { ingredient: 'Shallots', replacement: 'Red Onion finely diced', rationale: 'Gives the same sweet Maillard undertone.' }
+    ],
+    wineOrBeveragePairing: 'Cool spiced buttermilk (Neer Mor) or crisp South Indian lager'
+  },
+  {
+    id: 'udupi-sambar-idli',
+    title: 'Authentic Udupi Vegetable Sambar & Cloud-Soft Idlis (சாம்பார் இட்லி / సాంబార్ ఇడ్లీ)',
+    originalName: 'సాంబార్ ఇడ్లీ (Sambar Idli)',
+    cuisine: 'South Indian',
+    regionCategory: 'indian',
+    description: 'Piping hot, pillowy steamed rice cakes submerged in a fragrant, tangy-sweet Udupi lentil stew spiced with stone-ground coriander, chana dal, fenugreek, shallots, drumsticks, and tamarind.',
+    cookingTimeMinutes: 25,
+    prepTimeMinutes: 15,
+    difficulty: 'Easy',
+    defaultServings: 4,
+    caloriesPerServing: 230,
+    proteinGrams: 8.4,
+    fiberGrams: 5.2,
+    tags: ['vegetarian', 'vegan', 'gluten-free', 'south-indian-special', 'comfort-food'],
+    matchingIngredients: ['toor_dal', 'tamarind', 'mustard_seeds', 'curry_leaves', 'shallots', 'drumstick', 'tomato', 'coriander_powder', 'asafoetida', 'idli_rice'],
+    additionalIngredientsNeeded: [
+      { name: 'Jaggery (small pinch)', optional: true, commonPantry: true },
+      { name: 'Salt', optional: false, commonPantry: true }
+    ],
+    flavorProfile: {
+      spiceLevel: 3,
+      savory: 5,
+      tangy: 4,
+      aromatic: 5,
+      sweet: 2
+    },
+    culinaryScience: 'The unique Udupi flavor profile balances tartaric acid from tamarind with a touch of jaggery, while the freshly bloomed fenugreek (methi) adds a mellow herbal bitterness that cuts through the starchiness of toor dal.',
+    keyTechniques: [
+      { name: 'Dual Tempering', explanation: 'Infusing mustard seeds, dried red chillies, and curry leaves in hot ghee at the very end to seal in fresh top notes.' }
+    ],
+    ingredientsList: [
+      { name: 'Toor Dal (Pigeon Peas)', amount: 0.75, unit: 'cup', notes: 'Pressure cooked soft and mashed', isPantryMatch: true },
+      { name: 'Tamarind Pulp', amount: 2, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Shallots / Pearl Onions', amount: 10, unit: 'pieces', isPantryMatch: true },
+      { name: 'Drumstick & Carrots', amount: 1, unit: 'cup batons', isPantryMatch: true },
+      { name: 'Sambar Powder (or Coriander + Cumin + Fenugreek)', amount: 2, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Mustard Seeds & Curry Leaves', amount: 1, unit: 'tsp + 10 leaves', isPantryMatch: true },
+      { name: 'Asafoetida (Hing)', amount: 0.25, unit: 'tsp', isPantryMatch: true },
+      { name: 'Steamed Soft Idlis', amount: 8, unit: 'pieces', isPantryMatch: true }
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Simmer Vegetables in Tamarind Water',
+        instruction: 'Cook shallots, drumsticks, and carrots in 2 cups water with tamarind pulp, turmeric, and 1 tsp salt for 8 minutes until tender.',
+        timerMinutes: 8
+      },
+      {
+        stepNumber: 2,
+        title: 'Combine Dal & Sambar Spices',
+        instruction: 'Add the mashed cooked toor dal and sambar powder. Simmer on medium flame for 6 minutes until flavors meld into a rich, fragrant broth.',
+        timerMinutes: 6
+      },
+      {
+        stepNumber: 3,
+        title: 'Finish with Sizzling Ghee Popu',
+        instruction: 'In a small tadka pan, heat 1 tbsp ghee. Crackle mustard seeds, dried red chillies, asafoetida, and curry leaves. Pour immediately into the bubbling sambar. Serve ladled generously over hot steamed idlis.',
+        sensoryCue: 'Crackling curry leaves and deep earthy tamarind aroma.',
+        timerMinutes: 2
+      }
+    ],
+    substitutions: [
+      { ingredient: 'Toor Dal', replacement: 'Yellow Moong Dal or Masoor Dal', rationale: 'Cooks faster and gives a silky smooth broth.' }
+    ],
+    wineOrBeveragePairing: 'Fresh coconut chutney and South Indian Filter Coffee'
+  },
+  {
+    id: 'delhi-gajar-halwa',
+    title: 'Royal Delhi Shahi Gajar Ka Halwa (गाजर का हलवा)',
+    originalName: 'गाजर का हलवा (Gajar Ka Halwa)',
+    cuisine: 'Desserts & Sweets',
+    regionCategory: 'indian',
+    description: 'The definitive Indian winter royal sweet. Sweet juicy red carrots slow-simmered in whole milk until condensed, roasted in desi ghee, and folded with cardamom, khoya (mawa), golden fried cashews, and raisins.',
+    cookingTimeMinutes: 35,
+    prepTimeMinutes: 15,
+    difficulty: 'Medium',
+    defaultServings: 5,
+    caloriesPerServing: 360,
+    proteinGrams: 7.2,
+    fiberGrams: 3.8,
+    tags: ['vegetarian', 'gluten-free', 'dessert', 'mithai-classic', 'comfort-food'],
+    matchingIngredients: ['carrots', 'whole_milk', 'sugar', 'ghee', 'cardamom_powder', 'cashews', 'raisins', 'condensed_milk'],
+    additionalIngredientsNeeded: [
+      { name: 'Water', optional: true, commonPantry: true }
+    ],
+    flavorProfile: {
+      spiceLevel: 1,
+      savory: 2,
+      tangy: 1,
+      aromatic: 5,
+      sweet: 5
+    },
+    culinaryScience: 'Slow reduction of milk bath: Boiling grated carrots directly in whole milk allows lactose sugars to concentrate and caramelize (Maillard reaction), infusing natural dairy sweetness directly into the softening carrot cells without needing excess refined sugar.',
+    keyTechniques: [
+      { name: 'Ghee Bhunao Finish', explanation: 'Sautéing the reduced carrot milk mixture in hot ghee until the halwa glistens and releases fat from the edges.' }
+    ],
+    ingredientsList: [
+      { name: 'Sweet Red Carrots (Grated)', amount: 4, unit: 'cups (500g)', isPantryMatch: true },
+      { name: 'Whole Full-Cream Milk', amount: 3, unit: 'cups', isPantryMatch: true },
+      { name: 'Desi Ghee', amount: 3, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Granulated Sugar', amount: 0.5, unit: 'cup', isPantryMatch: true },
+      { name: 'Green Cardamom Powder', amount: 0.5, unit: 'tsp', isPantryMatch: true },
+      { name: 'Cashews & Raisins (Golden fried)', amount: 2, unit: 'tbsp each', isPantryMatch: true }
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Simmer Carrots in Full Milk',
+        instruction: 'Combine grated carrots and milk in a heavy-bottomed kadai. Bring to a boil, then simmer on medium flame for 20 minutes, stirring occasionally, until milk evaporates almost completely.',
+        timerMinutes: 20
+      },
+      {
+        stepNumber: 2,
+        title: 'Add Sugar & Bhunao with Ghee',
+        instruction: 'Add sugar (the halwa will become watery again). Cook on medium-high heat for 6 minutes until moisture evaporates. Add 3 tbsp desi ghee and sauté ("bhunao") vigorously for 5 minutes until deep ruby red and glossy.',
+        sensoryCue: 'Intense sweet aroma of caramelized milk solids, toasted ghee, and tender carrots.',
+        timerMinutes: 10
+      },
+      {
+        stepNumber: 3,
+        title: 'Fold Aromatics & Fried Nuts',
+        instruction: 'Stir in freshly ground cardamom powder and roasted cashews and raisins. Serve piping hot or chilled with vanilla ice cream.',
+        timerMinutes: 2
+      }
+    ],
+    substitutions: [
+      { ingredient: 'Whole Milk', replacement: '1 can Sweetened Condensed Milk + 1 cup water', rationale: 'Cuts cooking time in half for an express 15-minute halwa.' }
+    ],
+    wineOrBeveragePairing: 'Masala Chai or warm saffron milk'
+  },
+  {
+    id: 'bengali-sponge-rasgulla',
+    title: 'Kolkata Shahi Sponge Rasgulla (রসগোল্লা / छेना रसगुल्ला)',
+    originalName: 'রসগোল্লা (Roshogolla)',
+    cuisine: 'Desserts & Sweets',
+    regionCategory: 'indian',
+    description: 'Iconic Bengali sweet. Spongy, feather-light spheres of freshly curdled cottage cheese (chhena) simmered in a bubbling, crystal-clear rose and cardamom sugar broth until juicy and bouncy.',
+    cookingTimeMinutes: 20,
+    prepTimeMinutes: 20,
+    difficulty: 'Medium',
+    defaultServings: 4,
+    caloriesPerServing: 220,
+    proteinGrams: 6.8,
+    fiberGrams: 0.2,
+    tags: ['vegetarian', 'gluten-free', 'dessert', 'mithai-classic'],
+    matchingIngredients: ['whole_milk', 'sugar', 'lemon_juice', 'cardamom_powder', 'kewra_rose_water'],
+    additionalIngredientsNeeded: [
+      { name: 'Water', optional: false, commonPantry: true }
+    ],
+    flavorProfile: {
+      spiceLevel: 1,
+      savory: 1,
+      tangy: 1,
+      aromatic: 5,
+      sweet: 5
+    },
+    culinaryScience: 'Thermal protein coagulation and steam expansion: Kneading chhena breaks down casein curds into an elastic network. When boiled under high steam in light sugar syrup, steam pockets expand the casein matrix like a sponge, permanently setting its bouncy, juicy texture.',
+    keyTechniques: [
+      { name: 'Heel-of-Palm Chhena Kneading', explanation: 'Smearing the fresh curd against a plate with the heel of your palm for 5 minutes until silky smooth with zero grittiness.' },
+      { name: 'High-Heat Covered Steam Boil', explanation: 'Cooking rasgullas in a rolling boil with the lid tightly on so trapped steam expands the dumplings.' }
+    ],
+    ingredientsList: [
+      { name: 'Fresh Whole Milk (for Chhena)', amount: 1, unit: 'litre', isPantryMatch: true },
+      { name: 'Fresh Lemon Juice', amount: 2, unit: 'tbsp', isPantryMatch: true },
+      { name: 'Granulated Sugar', amount: 1.25, unit: 'cups', isPantryMatch: true },
+      { name: 'Water (for light syrup)', amount: 4, unit: 'cups', isPantryMatch: true },
+      { name: 'Crushed Green Cardamoms & Rose Water', amount: 3, unit: 'pods + 1 tsp', isPantryMatch: true }
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Curdle Milk for Fresh Chhena',
+        instruction: 'Bring milk to a boil. Turn off heat, add lemon juice diluted with 2 tbsp water. Gently stir until greenish whey separates cleanly. Strain curds through cheesecloth, rinse with cold water to remove lemon taste, and squeeze dry.',
+        timerMinutes: 8
+      },
+      {
+        stepNumber: 2,
+        title: 'Knead and Roll Smooth Spheres',
+        instruction: 'Knead chhena with the heel of your palm for 5 minutes until soft and grease begins to appear on your hands. Roll into 10 smooth, crack-free marble-sized balls.',
+        timerMinutes: 6
+      },
+      {
+        stepNumber: 3,
+        title: 'The Rolling Boil Steam Cook',
+        instruction: 'Boil sugar and 4 cups water with cardamom pods in a wide pot. Drop the chhena balls into the vigorously boiling syrup. Cover tightly and boil on high heat for 10 minutes without opening the lid.',
+        sensoryCue: 'Dumplings expand to double their original size and bounce effortlessly in the bubbling syrup.',
+        timerMinutes: 10
+      },
+      {
+        stepNumber: 4,
+        title: 'Chill and Serve',
+        instruction: 'Remove from heat. Add rose water. Let cool completely in the syrup before chilling in the refrigerator for 2 hours for maximum sponginess.',
+        timerMinutes: 15
+      }
+    ],
+    substitutions: [
+      { ingredient: 'Lemon Juice', replacement: 'White Vinegar or Yogurt Whey', rationale: 'Curdles milk into equally tender soft chhena.' }
+    ],
+    wineOrBeveragePairing: 'Chilled sweet lassi or Darjeeling first-flush tea'
+  },
+  {
+    id: 'sichuan-kung-pao',
+    title: 'Sichuan Kung Pao Tofu & Peanuts (宫保豆腐 - Gong Bao)',
+    originalName: '宫保豆腐 (Kung Pao Tofu)',
+    cuisine: 'Asian & Chinese',
+    regionCategory: 'international',
+    description: 'The world-famous Sichuan street dish. Crispy golden seared tofu cubes flash-fried with dried red chillies, mouth-tingling Sichuan peppercorns, scallions, and crunchy toasted peanuts in a glossy sweet-savory-tangy Kung Pao glaze.',
+    cookingTimeMinutes: 18,
+    prepTimeMinutes: 10,
+    difficulty: 'Easy',
+    defaultServings: 3,
+    caloriesPerServing: 330,
+    proteinGrams: 16.0,
+    fiberGrams: 4.8,
+    tags: ['vegetarian', 'vegan', 'asian-special', 'high-protein', 'spicy-tangy'],
+    matchingIngredients: ['tofu', 'peanuts', 'soy_sauce', 'garlic', 'ginger', 'cornstarch', 'scallions', 'sesame_oil'],
+    additionalIngredientsNeeded: [
+      { name: 'Sichuan Peppercorns or Black Pepper', optional: false, commonPantry: true },
+      { name: 'Dried Red Chillies', optional: false, commonPantry: true },
+      { name: 'Vinegar & Sugar', optional: false, commonPantry: true }
+    ],
+    flavorProfile: {
+      spiceLevel: 4,
+      savory: 5,
+      tangy: 3,
+      aromatic: 4,
+      sweet: 3
+    },
+    culinaryScience: 'Mala sensation & Maillard crunch: Hydroxy-alpha-sanshool in Sichuan peppercorn activates tactile touch receptors (50Hz vibration on the tongue) while capsaicin triggers heat. When combined with the high-heat flash sear of peanuts and cornstarch-dusted protein, it yields the coveted "Mala" sensory delight.',
+    keyTechniques: [
+      { name: 'Kung Pao Sauce Emulsion', explanation: 'Pre-mixing soy sauce, Chinese black vinegar (or balsamic), sugar, and cornstarch before wok-tossing so it glazes instantly upon contact with the hot wok.' }
+    ],
+    ingredientsList: [
+      { name: 'Firm Tofu (cubed)', amount: 300, unit: 'grams', isPantryMatch: true },
+      { name: 'Roasted Peanuts', amount: 0.5, unit: 'cup', isPantryMatch: true },
+      { name: 'Dried Red Chillies (halved)', amount: 6, unit: 'pieces', isPantryMatch: true },
+      { name: 'Sichuan Peppercorns', amount: 1, unit: 'tsp', isPantryMatch: true },
+      { name: 'Minced Garlic & Ginger', amount: 1, unit: 'tbsp each', isPantryMatch: true },
+      { name: 'Scallions (cut into 1-inch lengths)', amount: 4, unit: 'stalks', isPantryMatch: true },
+      { name: 'Soy Sauce + Vinegar + Sugar', amount: 2, unit: 'tbsp each', isPantryMatch: true },
+      { name: 'Cornstarch Slurry', amount: 1, unit: 'tsp in 3 tbsp water', isPantryMatch: true }
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Sear the Tofu Cubes',
+        instruction: 'Dust tofu cubes with 1 tbsp cornstarch and salt. Heat 2 tbsp oil in a wok. Fry tofu for 4 minutes until golden and crisp on all sides. Transfer to a plate.',
+        timerMinutes: 4
+      },
+      {
+        stepNumber: 2,
+        title: 'Bloom Dried Chillies & Sichuan Peppercorns',
+        instruction: 'In the remaining oil on medium heat, stir-fry halved dried red chillies and Sichuan peppercorns for 30 seconds until darkened and fragrant (do not burn). Add garlic, ginger, and scallion whites.',
+        sensoryCue: 'Pungent smoky chilli vapors and tingly citrus peppercorn aroma.',
+        timerMinutes: 2
+      },
+      {
+        stepNumber: 3,
+        title: 'Wok Glaze and Peanut Toss',
+        instruction: 'Pour in the pre-mixed soy-vinegar-sugar sauce. Let it bubble vigorously into a glossy dark syrup for 30 seconds. Dump in the crispy tofu, roasted peanuts, and scallion greens. Toss rapidly to coat and serve over steamed jasmine rice.',
+        timerMinutes: 2
+      }
+    ],
+    substitutions: [
+      { ingredient: 'Sichuan Peppercorns', replacement: 'Black Pepper + Lemon Zest', rationale: 'Mimics the citrusy tingling sensation.' }
+    ],
+    wineOrBeveragePairing: 'Iced Tsingtao beer or chilled plum juice'
   }
 ];

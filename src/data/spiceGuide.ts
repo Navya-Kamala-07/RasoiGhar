@@ -4,17 +4,19 @@ export const SPICES_AND_SEASONINGS: SpiceInfo[] = [
   {
     name: 'Cumin Seeds',
     hindiName: 'Jeera (जीरा)',
+    teluguName: 'Jeelakarra (జీలకర్ర)',
     flavorNotes: 'Warm, earthy, slightly nutty with a hint of citrus when toasted.',
-    bestUsedFor: 'Tadka / Tempering, Dal, Jeera Rice, Curries, Mexican Chili, Middle Eastern Tagines.',
-    bloomingMethod: 'Add to medium-hot ghee or oil (170°C); crackles and turns light brown within 10–12 seconds.',
+    bestUsedFor: 'Tadka / Popu, Lemon Rice, Dal, Jeera Rice, Curries, Mexican Chili, Middle Eastern Tagines.',
+    bloomingMethod: 'Add to medium-hot ghee or oil (170°C); crackles and turns light golden within 10–12 seconds.',
     globalEquivalentOrPair: 'Caraway seeds (earthier), Ground Cumin in Mexican/Tex-Mex.',
     substitute: 'Ground cumin (use 1/2 amount, add later so it does not burn) or pinch of caraway seeds.'
   },
   {
     name: 'Mustard Seeds (Black/Brown)',
     hindiName: 'Rai / Sarson (राई)',
+    teluguName: 'Avalu (ఆవాలు)',
     flavorNotes: 'Pungent, nutty, with a sharp wasabi-like bite that mellows into warm nuttiness when popped.',
-    bestUsedFor: 'South Indian Sambar, Rasam, Tadka, Pickles, Bengali Fish curries, French Dijon vinaigrettes.',
+    bestUsedFor: 'Andhra Popu / Tempering, Lemon Rice (Chitrannam), Sambar, Rasam, Tadka, Pickles.',
     bloomingMethod: 'Must be popped in smoking-hot oil with a splatter lid; if un-popped, they taste bitter.',
     globalEquivalentOrPair: 'Yellow mustard seeds (milder), Dijon mustard paste in European cooking.',
     substitute: 'Yellow mustard seeds or a pinch of crushed cumin seeds with drop of brown mustard.'
@@ -22,35 +24,19 @@ export const SPICES_AND_SEASONINGS: SpiceInfo[] = [
   {
     name: 'Turmeric Powder',
     hindiName: 'Haldi (हल्दी)',
-    flavorNotes: 'Earthy, subtly bitter, warm, giving golden amber color and potent anti-inflammatory properties.',
-    bestUsedFor: 'Virtually all Indian curries, Golden Milk, Moroccan Tagines, Spanish Paella (color booster).',
-    bloomingMethod: 'Always add to oil or water-based masala; needs fat and heat to awaken color and curb raw chalkiness.',
+    teluguName: 'Pasupu (పసుపు)',
+    flavorNotes: 'Earthy, subtly bitter, warm, giving golden amber color and potent antioxidant properties.',
+    bestUsedFor: 'Lemon Rice (signature golden glow), virtually all Indian curries, Golden Milk, Spanish Paella.',
+    bloomingMethod: 'Always add to warm oil or water-based masala; needs fat and heat to awaken color and curb raw chalkiness.',
     globalEquivalentOrPair: 'Saffron (delicate floral coloring), Yellow curry powder.',
     substitute: 'Small pinch of mild curry powder or saffron threads soaked in warm water.'
   },
   {
-    name: 'Garam Masala',
-    hindiName: 'Garam Masala (गरम मसाला)',
-    flavorNotes: 'Warming, sweet-spiced, intensely aromatic blend of cinnamon, cloves, cardamom, black pepper, and nutmeg.',
-    bestUsedFor: 'Finishing touch for North Indian curries, biryanis, lentil soups, roasted winter squash.',
-    bloomingMethod: 'Add at the very end of cooking (last 2–3 minutes) to preserve volatile top-note aromas.',
-    globalEquivalentOrPair: 'Baharat (Middle Eastern), Ras el Hanout (North African), Allspice + Cinnamon.',
-    substitute: 'Combine 1/2 tsp ground cumin, 1/4 tsp ground coriander, 1/8 tsp cinnamon, pinch of ground cloves.'
-  },
-  {
-    name: 'Kasuri Methi (Fenugreek Leaves)',
-    hindiName: 'Kasuri Methi (कसूरी मेथी)',
-    flavorNotes: 'Maple-sweet aroma with an appetizing savory bitterness that gives restaurant-style curries their signature finish.',
-    bestUsedFor: 'Butter Chicken, Paneer Butter Masala, Dal Makhani, Parathas, Creamy sauces.',
-    bloomingMethod: 'Rub between your dry palms to crush into fine flakes; sprinkle in the final 2 minutes of simmering.',
-    globalEquivalentOrPair: 'Celery leaves (bitter-savory), Lovage, Greek fenugreek seeds.',
-    substitute: 'Crushed dried celery leaves or a tiny splash of real maple syrup + pinch of celery seed.'
-  },
-  {
     name: 'Asafoetida',
     hindiName: 'Hing (हींग)',
+    teluguName: 'Inguva (ఇంగువ)',
     flavorNotes: 'Extremely pungent raw (sulfurous), transforming in hot oil into sweet, savory onion-garlic allium richness.',
-    bestUsedFor: 'Lentil dals, sambar, potato subzis, Jain cooking (allium-free), digestive aid.',
+    bestUsedFor: 'Andhra Chitrannam (Lemon Rice), temple foods, lentil dals, sambar, rasam, digestive aid.',
     bloomingMethod: 'A tiny pinch (1/8 tsp) straight into hot oil for 3 seconds before adding other ingredients.',
     globalEquivalentOrPair: 'Garlic powder + onion powder, Truffle oil (umami depth).',
     substitute: 'Pinch of garlic powder and onion powder mixed together.'
@@ -58,11 +44,52 @@ export const SPICES_AND_SEASONINGS: SpiceInfo[] = [
   {
     name: 'Curry Leaves',
     hindiName: 'Kadi Patta (कढ़ी पत्ता)',
-    flavorNotes: 'Citrusy, herbal, musky, utterly unique essential oil aroma that defines South Indian & Coastal cuisine.',
-    bestUsedFor: 'Sambar, Rasam, Poha, Upma, Coconut curries, Tadka for raita and chutneys.',
+    teluguName: 'Karivepaku (కరివేపాకు)',
+    flavorNotes: 'Citrusy, herbal, musky, utterly unique essential oil aroma that defines Telugu, Andhra & South Indian cuisine.',
+    bestUsedFor: 'Lemon Rice (Nimmakaya Pulihora), Gongura Pappu, Sambar, Rasam, Poha, Upma, Tadka.',
     bloomingMethod: 'Drop fresh leaves into hot oil; they will crackle and release intense citrus-pine aromas immediately.',
     globalEquivalentOrPair: 'Kaffir lime leaves (Southeast Asia), Lemongrass + Lime zest.',
     substitute: 'Kaffir lime leaves or fresh lime zest with a basil leaf (use fresh, dried has little flavor).'
+  },
+  {
+    name: 'Shahi Jeera (Royal Caraway / Black Cumin)',
+    hindiName: 'Shahi Jeera (शाही जीरा)',
+    teluguName: 'Shahi Jeelakarra (షాహీ జీలకర్ర)',
+    flavorNotes: 'Darker, thinner seeds with a floral, sweet-earthy licorice perfume distinct from standard cumin.',
+    bestUsedFor: 'Hyderabadi Dum Biryani, Awadhi Biryani, Mughlai Kormas, Pulaos.',
+    bloomingMethod: 'Infuse into boiling water when parboiling biryani rice or sizzle gently in ghee for the kacchi masala.',
+    globalEquivalentOrPair: 'Caraway seeds (earthier), Black seed / Nigella (sharp pepper note).',
+    substitute: 'Standard cumin seeds + pinch of fennel seeds or caraway seeds.'
+  },
+  {
+    name: 'Kewra & Rose Water (Screw Pine Essence)',
+    hindiName: 'Kewra Jal / Gulab Jal (केवड़ा / गुलाब जल)',
+    teluguName: 'Kewra / Gulabi Neeru',
+    flavorNotes: 'Intensely fragrant, sweet floral distilled essences evoking the royal courts of Lucknow and Hyderabad.',
+    bestUsedFor: 'Kolkata Biryani, Lucknowi Biryani, Hyderabadi Dum Biryani, Shahi Tukda.',
+    bloomingMethod: 'Sprinkled over rice along with saffron milk right before sealing the pot for dum steam cooking.',
+    globalEquivalentOrPair: 'Orange blossom water (Mediterranean / Middle Eastern).',
+    substitute: 'Orange blossom water or a drop of pure vanilla extract + rose water.'
+  },
+  {
+    name: 'Garam Masala',
+    hindiName: 'Garam Masala (गरम मसाला)',
+    teluguName: 'Garam Masala (గరం మసాలా)',
+    flavorNotes: 'Warming, sweet-spiced, intensely aromatic blend of cinnamon, cloves, cardamom, black pepper, and mace.',
+    bestUsedFor: 'Finishing touch for biryanis, North Indian gravies, lentil soups.',
+    bloomingMethod: 'Add at the very end of cooking (last 2–3 minutes) to preserve volatile top-note aromas.',
+    globalEquivalentOrPair: 'Baharat (Middle Eastern), Ras el Hanout (North African), Allspice + Cinnamon.',
+    substitute: 'Combine 1/2 tsp ground cumin, 1/4 tsp ground coriander, 1/8 tsp cinnamon, pinch of ground cloves.'
+  },
+  {
+    name: 'Kasuri Methi (Fenugreek Leaves)',
+    hindiName: 'Kasuri Methi (कसूरी मेथी)',
+    teluguName: 'Menthikura Aakulu (మెంతికూర ఆకులు)',
+    flavorNotes: 'Maple-sweet aroma with an appetizing savory bitterness that gives restaurant-style curries their signature finish.',
+    bestUsedFor: 'Butter Chicken, Paneer Butter Masala, Dal Makhani, Parathas, Creamy sauces.',
+    bloomingMethod: 'Rub between your dry palms to crush into fine flakes; sprinkle in the final 2 minutes of simmering.',
+    globalEquivalentOrPair: 'Celery leaves (bitter-savory), Lovage, Greek fenugreek seeds.',
+    substitute: 'Crushed dried celery leaves or a tiny splash of real maple syrup + pinch of celery seed.'
   },
   {
     name: 'Italian Basil',
@@ -94,6 +121,36 @@ export const SPICES_AND_SEASONINGS: SpiceInfo[] = [
 ];
 
 export const COMMON_SUBSTITUTIONS_MAP: Record<string, { substitute: string; ratio: string; explanation: string }> = {
+  'birista (fried onions)': {
+    substitute: 'French Fried Onions or Slow Pan-Fried Thin Shallots',
+    ratio: '1:1',
+    explanation: 'Crispy fried onions provide the essential sweet, deeply caramelized Mughlai flavor foundation in all authentic biryanis.'
+  },
+  'shahi jeera (black cumin)': {
+    substitute: 'Regular Cumin + Caraway Seeds or Fennel',
+    ratio: '3/4 tsp regular cumin + 1/4 tsp caraway or fennel seeds',
+    explanation: 'Captures both the earthy base and the floral licorice top note of royal black cumin for biryani.'
+  },
+  'kewra water': {
+    substitute: 'Rose Water or Orange Blossom Water',
+    ratio: '1:1',
+    explanation: 'Gives the royal Nawabi floral vapor characteristic of Kolkata and Awadhi biryanis.'
+  },
+  'gongura (sorrel leaves)': {
+    substitute: 'Fresh Spinach + 2 tbsp Lemon Juice or Tamarind Paste',
+    ratio: '1 cup spinach + 1.5 tbsp lemon juice / tamarind pulp',
+    explanation: 'Replicates the unique sour-tart, iron-rich flavor of Telugu Gongura leaves in dals and curries.'
+  },
+  'seeraga samba rice': {
+    substitute: 'Basmati Rice or Kalijeera / Jasmine Rice',
+    ratio: '1:1 (adjust water ratio to 1.75 cups per cup of rice)',
+    explanation: 'Used in Dindigul Thalappakatti and Malabar biryanis; tiny short-grain rice that holds ghee and pepper wonderfully.'
+  },
+  'lemon juice (for lemon rice)': {
+    substitute: 'Fresh Lime Juice or Raw Mango (Mamidikaya)',
+    ratio: '1:1',
+    explanation: 'Provides bright citric acid; always fold into warm rice off-heat to avoid thermal bitterness.'
+  },
   'paneer': {
     substitute: 'Firm Tofu or Halloumi',
     ratio: '1:1',
@@ -140,3 +197,4 @@ export const COMMON_SUBSTITUTIONS_MAP: Record<string, { substitute: string; rati
     explanation: 'Provides leafy green freshness and subtle herb sweetness.'
   }
 };
+

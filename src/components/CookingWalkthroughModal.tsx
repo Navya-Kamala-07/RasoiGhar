@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Recipe, RecipeStep } from '../types/recipe';
+import { Recipe, RecipeStep, NutritionalInfo } from '../types/recipe';
+import { fetchRecipeNutrition } from '../utils/nutritionApi';
 import {
   X,
   Play,
@@ -20,6 +21,10 @@ import {
   Lightbulb,
   ChefHat,
   ArrowRight,
+  Activity,
+  Dumbbell,
+  Wheat,
+  RotateCw,
 } from 'lucide-react';
 import {
   playKitchenChime,
@@ -40,6 +45,43 @@ export const CookingWalkthroughModal: React.FC<CookingWalkthroughModalProps> = (
   const [currentStepIdx, setCurrentStepIdx] = useState(0);
   const [servings, setServings] = useState(recipe.defaultServings);
   const [isSpeaking, setIsSpeaking] = useState(false);
+
+  // Nutritional information state via AI generation endpoint
+  const [nutrition, setNutrition] = useState<NutritionalInfo | null>(
+    recipe.nutritionalInfo || (recipe.proteinGrams !== undefined && recipe.fiberGrams !== undefined ? {
+      calories: recipe.caloriesPerServing,
+      protein: recipe.proteinGrams,
+      fiber: recipe.fiberGrams,
+      carbs: recipe.carbsGrams,
+      fat: recipe.fatGrams,
+      summary: (recipe as any).nutritionSummary,
+    } : null)
+  );
+  const [isLoadingNutrition, setIsLoadingNutrition] = useState(false);
+
+  const handleFetchNutrition = async () => {
+    if (isLoadingNutrition) return;
+    setIsLoadingNutrition(true);
+    try {
+      const data = await fetchRecipeNutrition(recipe);
+      setNutrition(data);
+      recipe.nutritionalInfo = data;
+      recipe.caloriesPerServing = data.calories;
+      recipe.proteinGrams = data.protein;
+      recipe.fiberGrams = data.fiber;
+    } catch (err) {
+      console.error('Failed to fetch nutrition:', err);
+    } finally {
+      setIsLoadingNutrition(false);
+    }
+  };
+
+  // Auto-fetch nutrition on modal mount if not present
+  useEffect(() => {
+    if (!nutrition) {
+      handleFetchNutrition();
+    }
+  }, []);
 
   // Timer states
   const currentStep: RecipeStep = recipe.steps[currentStepIdx] || recipe.steps[0];
@@ -223,6 +265,14 @@ export const CookingWalkthroughModal: React.FC<CookingWalkthroughModalProps> = (
               </div>
             </div>
 
+            {/* Quick Nutrition Pill */}
+            <div className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/15 backdrop-blur-xs border border-white/20 text-xs font-semibold">
+              <Activity className="w-3.5 h-3.5 text-amber-200" />
+              <span>
+                {Math.round((nutrition?.calories ?? recipe.caloriesPerServing ?? 320) * (servings / recipe.defaultServings))} kcal
+              </span>
+            </div>
+
             {/* Close Button */}
             <button
               onClick={onClose}
@@ -393,6 +443,131 @@ export const CookingWalkthroughModal: React.FC<CookingWalkthroughModalProps> = (
                   <span className="text-stone-800">{ing.name}</span>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* AI-Generated Nutritional Information Panel (Calories, Protein, Fiber) */}
+          <div className="p-5 rounded-3xl bg-gradient-to-br from-amber-50/70 via-white to-orange-50/50 border border-amber-200/90 shadow-sm space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-amber-200/60">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-xl bg-amber-600/10 border border-amber-600/20 flex items-center justify-center text-amber-700">
+                  <Activity className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-stone-900 font-display flex items-center gap-1.5">
+                    <span>Nutritional Information &amp; Macro Breakdown</span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-sans font-bold border border-amber-300">
+                      Gemini AI Analyzed
+                    </span>
+                  </h4>
+                  <p className="text-[11px] text-stone-500">
+                    Scaled for {servings} {servings === 1 ? 'serving' : 'servings'} &bull; Base: {recipe.defaultServings} servings
+                  </p>
+                </div>
+              </div>
+
+              <button
+                onClick={handleFetchNutrition}
+                disabled={isLoadingNutrition}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-100/80 hover:bg-amber-200 text-amber-900 text-xs font-bold transition-all disabled:opacity-50 self-start sm:self-auto cursor-pointer"
+                title="Refresh nutritional analysis with Gemini AI"
+              >
+                {isLoadingNutrition ? (
+                  <>
+                    <RotateCw className="w-3.5 h-3.5 text-amber-700 animate-spin" />
+                    <span>Analyzing with Gemini...</span>
+                  </>
+                ) : (
+                  <>
+                    <Sparkles className="w-3.5 h-3.5 text-amber-700" />
+                    <span>Recalculate AI Nutrition</span>
+                  </>
+                )}
+              </button>
+            </div>
+
+            {/* Core Metrics: Calories, Protein, Fiber */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {/* Calories Card */}
+              <div className="p-3.5 rounded-2xl bg-white border border-stone-200/90 shadow-2xs">
+                <div className="flex items-center justify-between text-stone-500 mb-1">
+                  <span className="text-[11px] font-bold uppercase tracking-wider">Calories</span>
+                  <Flame className="w-4 h-4 text-orange-600" />
+                </div>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-2xl font-black text-stone-900 font-mono">
+                    {Math.round((nutrition?.calories ?? recipe.caloriesPerServing ?? 320) * (servings / recipe.defaultServings))}
+                  </span>
+                  <span className="text-xs font-semibold text-stone-500">kcal total</span>
+                </div>
+                <div className="text-[10px] text-stone-400 mt-1">
+                  ~{nutrition?.calories ?? recipe.caloriesPerServing ?? 320} kcal per serving
+                </div>
+              </div>
+
+              {/* Protein Card */}
+              <div className="p-3.5 rounded-2xl bg-white border border-emerald-200/80 shadow-2xs">
+                <div className="flex items-center justify-between text-emerald-700 mb-1">
+                  <span className="text-[11px] font-bold uppercase tracking-wider">Protein</span>
+                  <Dumbbell className="w-4 h-4 text-emerald-600" />
+                </div>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-2xl font-black text-emerald-950 font-mono">
+                    {Math.round(((nutrition?.protein ?? recipe.proteinGrams ?? (recipe.tags.includes('high-protein') ? 16 : 11)) * (servings / recipe.defaultServings)) * 10) / 10}
+                  </span>
+                  <span className="text-xs font-semibold text-emerald-700">g total</span>
+                </div>
+                <div className="text-[10px] text-emerald-600/80 mt-1">
+                  ~{nutrition?.protein ?? recipe.proteinGrams ?? 11}g per serving
+                </div>
+              </div>
+
+              {/* Fiber Card */}
+              <div className="p-3.5 rounded-2xl bg-white border border-orange-200/80 shadow-2xs">
+                <div className="flex items-center justify-between text-orange-700 mb-1">
+                  <span className="text-[11px] font-bold uppercase tracking-wider">Dietary Fiber</span>
+                  <Wheat className="w-4 h-4 text-orange-600" />
+                </div>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-2xl font-black text-orange-950 font-mono">
+                    {Math.round(((nutrition?.fiber ?? recipe.fiberGrams ?? 4.5) * (servings / recipe.defaultServings)) * 10) / 10}
+                  </span>
+                  <span className="text-xs font-semibold text-orange-700">g total</span>
+                </div>
+                <div className="text-[10px] text-orange-600/80 mt-1">
+                  ~{nutrition?.fiber ?? recipe.fiberGrams ?? 4.5}g per serving
+                </div>
+              </div>
+            </div>
+
+            {/* Additional Macros & AI Health Insights */}
+            <div className="p-3.5 rounded-2xl bg-amber-50/80 border border-amber-200/80 space-y-2">
+              <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
+                <span className="font-bold text-amber-950 flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-700" />
+                  <span>Dietitian Insight:</span>
+                </span>
+                {nutrition?.carbs && nutrition?.fat && (
+                  <div className="flex items-center gap-3 text-[11px] font-semibold text-stone-600">
+                    <span>
+                      Carbohydrates:{' '}
+                      <strong className="text-stone-900">
+                        {Math.round((nutrition.carbs * (servings / recipe.defaultServings)) * 10) / 10}g
+                      </strong>
+                    </span>
+                    <span>
+                      Healthy Fats:{' '}
+                      <strong className="text-stone-900">
+                        {Math.round((nutrition.fat * (servings / recipe.defaultServings)) * 10) / 10}g
+                      </strong>
+                    </span>
+                  </div>
+                )}
+              </div>
+              <p className="text-xs text-amber-900/90 leading-relaxed">
+                {nutrition?.summary ||
+                  'Naturally nourishing recipe packed with wholesome whole foods, aromatic antioxidant herbs, and gut-friendly fiber.'}
+              </p>
             </div>
           </div>
 

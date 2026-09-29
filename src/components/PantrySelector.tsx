@@ -68,6 +68,7 @@ export const PantrySelector: React.FC<PantrySelectorProps> = ({
       (item) =>
         item.name.toLowerCase().includes(q) ||
         (item.indianName && item.indianName.toLowerCase().includes(q)) ||
+        (item.teluguName && item.teluguName.toLowerCase().includes(q)) ||
         (item.substitutes && item.substitutes.some((s) => s.toLowerCase().includes(q)))
     );
   }, [searchQuery, activeCategory]);
@@ -84,20 +85,23 @@ export const PantrySelector: React.FC<PantrySelectorProps> = ({
   const getIngredientDisplayName = (idOrName: string) => {
     const found = INGREDIENTS_DATABASE.find((i) => i.id === idOrName);
     if (found) {
+      if (found.teluguName && found.indianName) {
+        return `${found.name} (${found.indianName} / ${found.teluguName.split('/')[0].trim()})`;
+      }
       return found.indianName ? `${found.name} (${found.indianName})` : found.name;
     }
     return idOrName;
   };
 
   return (
-    <div className="bg-white rounded-3xl border border-amber-200/90 shadow-sm p-5 md:p-7 space-y-6">
+    <div className="bg-white rounded-3xl border border-emerald-900/10 shadow-sm p-5 md:p-7 space-y-6">
       {/* Header & Quick Presets */}
       <div>
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
           <div>
             <h2 className="text-xl md:text-2xl font-display font-bold text-stone-900 flex items-center gap-2">
               <span>Your Kitchen Pantry</span>
-              <span className="text-xs px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 font-sans font-bold border border-amber-300">
+              <span className="text-xs px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-900 font-sans font-bold border border-emerald-200">
                 {selectedIngredients.length} Items Selected
               </span>
             </h2>
@@ -127,7 +131,7 @@ export const PantrySelector: React.FC<PantrySelectorProps> = ({
               <button
                 key={preset.id}
                 onClick={() => onApplyPreset(preset)}
-                className="shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200/90 transition-all hover:scale-[1.02] shadow-2xs"
+                className="shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-emerald-50/70 hover:bg-emerald-100 text-emerald-950 border border-emerald-200/80 transition-all hover:scale-[1.02] shadow-2xs"
                 title={preset.description}
               >
                 <span>{preset.flag}</span>
@@ -140,17 +144,17 @@ export const PantrySelector: React.FC<PantrySelectorProps> = ({
 
       {/* Active Ingredients Tray */}
       {selectedIngredients.length > 0 ? (
-        <div className="p-3.5 rounded-2xl bg-amber-50/70 border border-amber-200/80">
-          <div className="flex items-center justify-between text-xs font-bold text-amber-900 mb-2">
+        <div className="p-3.5 rounded-2xl bg-emerald-50/50 border border-emerald-200/70">
+          <div className="flex items-center justify-between text-xs font-bold text-emerald-950 mb-2">
             <span>Ingredients In Your Pan &amp; Pot:</span>
-            <span className="text-amber-700/80 font-normal">Click any tag to remove</span>
+            <span className="text-emerald-800/80 font-normal">Click any tag to remove</span>
           </div>
           <div className="flex flex-wrap gap-2">
             {selectedIngredients.map((item) => (
               <span
                 key={item}
                 onClick={() => onToggleIngredient(item)}
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-semibold bg-white text-stone-800 border border-amber-300 shadow-2xs cursor-pointer hover:bg-red-50 hover:border-red-300 hover:text-red-700 transition-all group"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-semibold bg-white text-stone-800 border border-emerald-300 shadow-2xs cursor-pointer hover:bg-red-50 hover:border-red-300 hover:text-red-700 transition-all group"
               >
                 <span>{getIngredientDisplayName(item)}</span>
                 <X className="w-3.5 h-3.5 text-stone-400 group-hover:text-red-600 transition-colors" />
@@ -174,8 +178,8 @@ export const PantrySelector: React.FC<PantrySelectorProps> = ({
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search ingredients in English or Hindi (e.g., Paneer, Dal, Basil, Cumin, Tomato, Garlic)..."
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-stone-300 bg-stone-50/50 text-sm text-stone-900 placeholder:text-stone-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all"
+            placeholder="Search ingredients in English, Hindi, or Telugu (e.g., Lemon / Nimmakaya, Pallilu, Birista, Rice, Gongura)..."
+            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-stone-300 bg-stone-50/50 text-sm text-stone-900 placeholder:text-stone-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:border-emerald-700 transition-all"
           />
           {searchQuery && (
             <button
@@ -193,12 +197,12 @@ export const PantrySelector: React.FC<PantrySelectorProps> = ({
             value={customInput}
             onChange={(e) => setCustomInput(e.target.value)}
             placeholder="Add custom item..."
-            className="flex-1 px-3.5 py-2.5 rounded-xl border border-stone-300 bg-stone-50/50 text-sm text-stone-900 placeholder:text-stone-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-500 transition-all"
+            className="flex-1 px-3.5 py-2.5 rounded-xl border border-stone-300 bg-stone-50/50 text-sm text-stone-900 placeholder:text-stone-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-700 transition-all"
           />
           <button
             type="submit"
             disabled={!customInput.trim()}
-            className="px-3.5 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 disabled:opacity-50 text-white text-xs font-bold flex items-center gap-1 shadow-xs transition-colors shrink-0"
+            className="px-3.5 py-2.5 rounded-xl bg-emerald-800 hover:bg-emerald-700 disabled:opacity-50 text-white text-xs font-bold flex items-center gap-1 shadow-xs transition-colors shrink-0"
           >
             <Plus className="w-4 h-4" />
             <span>Add</span>
@@ -215,7 +219,7 @@ export const PantrySelector: React.FC<PantrySelectorProps> = ({
               onClick={() => setActiveCategory(cat.id)}
               className={`px-3.5 py-2 rounded-t-xl text-xs font-bold whitespace-nowrap transition-all border-b-2 -mb-px flex items-center gap-1.5 ${
                 activeCategory === cat.id
-                  ? 'border-amber-600 text-amber-900 bg-amber-50/60'
+                  ? 'border-emerald-800 text-emerald-950 bg-emerald-50/60'
                   : 'border-transparent text-stone-500 hover:text-stone-800 hover:bg-stone-50'
               }`}
             >
@@ -236,26 +240,26 @@ export const PantrySelector: React.FC<PantrySelectorProps> = ({
               onClick={() => onToggleIngredient(item.id)}
               className={`p-2.5 rounded-xl text-left transition-all border flex items-center justify-between gap-1.5 ${
                 isSelected
-                  ? 'bg-amber-600 text-white border-amber-600 shadow-xs font-bold scale-[0.98]'
-                  : 'bg-white hover:bg-stone-50 text-stone-800 border-stone-200/90 hover:border-amber-300'
+                  ? 'bg-emerald-800 text-white border-emerald-800 shadow-xs font-bold scale-[0.98]'
+                  : 'bg-white hover:bg-stone-50 text-stone-800 border-stone-200/90 hover:border-emerald-300'
               }`}
             >
               <div className="truncate">
                 <div className="text-xs font-semibold truncate leading-tight">{item.name}</div>
-                {item.indianName && (
+                {(item.indianName || item.teluguName) && (
                   <div
                     className={`text-[10px] truncate ${
-                      isSelected ? 'text-amber-100' : 'text-stone-400'
+                      isSelected ? 'text-emerald-100' : 'text-stone-400'
                     }`}
                   >
-                    {item.indianName}
+                    {[item.indianName, item.teluguName ? item.teluguName.split('/')[0].trim() : null].filter(Boolean).join(' • ')}
                   </div>
                 )}
               </div>
               <div
                 className={`w-4 h-4 rounded-md flex items-center justify-center shrink-0 border ${
                   isSelected
-                    ? 'bg-white text-amber-700 border-white'
+                    ? 'bg-white text-emerald-800 border-white'
                     : 'border-stone-300 text-transparent'
                 }`}
               >
@@ -318,6 +322,8 @@ export const PantrySelector: React.FC<PantrySelectorProps> = ({
               <div className="flex flex-wrap gap-1.5">
                 {[
                   { id: 'all', label: 'All Cuisines (Indian & Global)' },
+                  { id: 'biryani', label: '👑 All Biryani Styles' },
+                  { id: 'andhra-telugu', label: '🍋 Andhra & Telugu (Lemon Rice, Pappu, Popu)' },
                   { id: 'indian', label: 'All Indian' },
                   { id: 'north-indian', label: 'North Indian (Rich gravies, tandoor)' },
                   { id: 'south-indian', label: 'South Indian (Tadka, curry leaves, tamarind)' },
